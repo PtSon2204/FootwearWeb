@@ -17,9 +17,29 @@ namespace ShoesShop.Areas.Admin.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public async Task<IActionResult> Index()
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _dataContext.Categories.OrderByDescending(p => p.Id).ToListAsync());
+        //}
+
+        public async Task<IActionResult> Index(int page = 1)
         {
-            return View(await _dataContext.Categories.OrderByDescending(p => p.Id).ToListAsync());
+            List<CategoryModel> categories = await _dataContext.Categories.ToListAsync();
+
+            const int pageSize = 10; //10 item/trên
+
+            if (page < 1)
+            {
+                page = 1;
+            }
+            int recsCount = categories.Count();
+            var pager = new Pagination(recsCount, page, pageSize);  
+
+            int recSkip = (page - 1) * pageSize;
+            var data = categories.Skip(recSkip).Take(pager.PageSize).ToList();
+            ViewBag.Pager = pager;
+
+            return View(data);
         }
 
         [HttpGet]
