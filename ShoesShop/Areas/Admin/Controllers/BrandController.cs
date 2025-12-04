@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ShoesShop.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class BrandController : Controller
     {
         private readonly DataContext _dataContext;

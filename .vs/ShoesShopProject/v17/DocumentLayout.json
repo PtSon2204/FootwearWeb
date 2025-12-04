@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\areas\\admin\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\areas\\admin\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 208,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Program.cs",
-              "RelativeDocumentMoniker": "ShoesShop\\Program.cs",
-              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Program.cs",
-              "RelativeToolTip": "ShoesShop\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "ShoesShop\\Areas\\Admin\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Controllers\\UserController.cs",
+              "RelativeToolTip": "ShoesShop\\Areas\\Admin\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T14:28:09.006Z",
+              "WhenOpened": "2025-12-04T14:58:08.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "ShoesShop\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "ShoesShop\\Areas\\Admin\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:58:08.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "ShoesShop\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "ShoesShop\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:58:07.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BrandController.cs",
+              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Controllers\\BrandController.cs",
+              "RelativeDocumentMoniker": "ShoesShop\\Areas\\Admin\\Controllers\\BrandController.cs",
+              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Controllers\\BrandController.cs",
+              "RelativeToolTip": "ShoesShop\\Areas\\Admin\\Controllers\\BrandController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:58:05.799Z",
               "EditorCaption": ""
             }
           ]

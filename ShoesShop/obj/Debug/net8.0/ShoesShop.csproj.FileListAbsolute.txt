@@ -306,3 +306,4 @@ D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\obj\Debug\net8.0\refint\
 D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\obj\Debug\net8.0\ShoesShop.pdb
 D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\obj\Debug\net8.0\ShoesShop.genruntimeconfig.cache
 D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\obj\Debug\net8.0\ref\ShoesShop.dll
+D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\obj\Debug\net8.0\ShoesShop.sourcelink.json

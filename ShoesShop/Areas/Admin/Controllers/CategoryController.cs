@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace ShoesShop.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class CategoryController : Controller
     {
         private readonly DataContext _dataContext;
