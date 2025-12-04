@@ -67,8 +67,10 @@ namespace ShoesShop
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseAuthentication();
-            app.UseAuthorization();
+
+            app.UseAuthentication(); //đăng nhập trước
+
+            app.UseAuthorization(); // phân quyền
 
             app.MapControllerRoute(
                 name: "Areas",
