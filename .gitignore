@@ -1,0 +1,42 @@
+# ===== C# / .NET / Visual Studio 2022 =====
+# Build results
+bin/
+obj/
+
+# Visual Studio 2022 files (local settings)
+.vs/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto generated
+*.tmp
+*.temp
+*.bak
+*.backup
+*.log
+*.cache
+
+# Test results
+TestResults/
+*.trx
+
+# Resharper / Rider (nếu cài thì Git cũng ignore, không ảnh hưởng VS 2022)
+_ReSharper*/
+*.DotSettings.user
+
+# Publish folder
+publish/
+Publish/
+
+# Database local files (nếu có DB trong project folder)
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+Thumbs.db
+.DS_Store
