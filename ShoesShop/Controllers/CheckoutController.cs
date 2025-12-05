@@ -1,14 +1,15 @@
 ﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Mvc;
 
 namespace ShoesShop.Controllers
 {
     public class CheckoutController : Controller
     {
         private readonly DataContext _dataContext;
-        public CheckoutController(DataContext dataContext)
+        private readonly IEmailSender _emailSender;
+        public CheckoutController(IEmailSender emailSender, DataContext dataContext)
         {
             _dataContext = dataContext;
+            _emailSender = emailSender;
         }
         public async Task<IActionResult> Checkout()
         {
@@ -42,6 +43,13 @@ namespace ShoesShop.Controllers
                     _dataContext.SaveChanges();
                 }
                 HttpContext.Session.Remove("Cart");
+                //Send mail order successfully
+                var receiver = userEmail;
+                var subject = "Order on equipment successfully!";
+                var message = "Order successfully. Have a nice day!";
+
+                await _emailSender.SendEmailAsync(receiver, subject, message);
+
                 TempData["success"] = "Checkout successfully, please wait for order approval";
 
                 return RedirectToAction("Index", "Cart");

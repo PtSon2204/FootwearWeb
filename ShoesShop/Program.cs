@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
+using ShoesShop.Areas.Admin.Repository;
 
 namespace ShoesShop
 {
@@ -14,6 +15,9 @@ namespace ShoesShop
             {
                 options.UseSqlServer(builder.Configuration["ConnectionStrings:ConnectedDb"]);
             });
+
+            //send mail
+            builder.Services.AddTransient<IEmailSender, EmailSender>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

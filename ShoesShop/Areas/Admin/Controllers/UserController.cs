@@ -21,13 +21,18 @@ namespace ShoesShop.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var usersWithRoles = await (from u in _dataContext.Users
-                                       join ur in _dataContext.UserRoles on u.Id equals ur.UserId
-                                       join r in _dataContext.Roles on ur.RoleId equals r.Id
-                                       select new {
-                                           User = u, 
-                                           RoleName = r.Name
-                                       }).ToListAsync();
+            var usersWithRoles = await (
+                       from u in _dataContext.Users
+                       join ur in _dataContext.UserRoles on u.Id equals  ur.       UserId       into        userRolesGroup
+                       from ur in userRolesGroup.DefaultIfEmpty()   // LEFT JOIN
+                       join r in _dataContext.Roles on ur.RoleId equals r.  Id      into      rolesGroup
+                       from r in rolesGroup.DefaultIfEmpty()       // LEFT JOIN
+                       select new
+                       {
+                           User = u,
+                           RoleName = r != null ? r.Name : "Null"
+                                     }
+                       ).ToListAsync();
             return View(usersWithRoles);
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ShoesShop.Models.ViewModels;
@@ -10,11 +11,13 @@ namespace ShoesShop.Controllers
         private UserManager<AppUserModel> _userManage;
 
         private SignInManager<AppUserModel> _signInManager;
+        private readonly IEmailSender _emailSender;
 
-        public AccountController (SignInManager<AppUserModel> signInManager, UserManager<AppUserModel> userManager)
+        public AccountController (IEmailSender emailSender , SignInManager<AppUserModel> signInManager, UserManager<AppUserModel> userManager)
         {
             _userManage = userManager;
             _signInManager = signInManager;
+            _emailSender = emailSender;
         }
         public IActionResult Login(string returnUrl)
         {
@@ -30,6 +33,13 @@ namespace ShoesShop.Controllers
 
                 if (result.Succeeded)
                 {
+                    var userEmail = User.FindFirstValue(ClaimTypes.Email);
+                    TempData["success"] = "Login successfully!";
+                    var receiver = userEmail;
+                    var subject = "Login on equipment successfully!";
+                    var message = "Have a nice day!";
+
+                    await _emailSender.SendEmailAsync(receiver, subject, message);
                     return Redirect(loginVm.ReturnUrl ?? "/");
                 }
                 ModelState.AddModelError("", "Invalid Username and Password");
@@ -63,10 +73,10 @@ namespace ShoesShop.Controllers
             return View(user);
         }
 
-        public async Task<IActionResult> Logout(string returnUrl = "/")
+        public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync(); //thoát
-            return RedirectToAction(returnUrl);
+            return RedirectToAction("Index", "Home");
         }
     }
 }
