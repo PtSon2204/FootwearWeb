@@ -1,9 +1,11 @@
 ﻿@model IEnumerable<OrderDetails>
 @{
 	ViewData["title"] = "Order Details";
+	decimal total = 0;
+	decimal subtotal = 0;
 }
 <h1>List OrderDetails</h1>
-
+@Html.AntiForgeryToken()
 <table class="table">
 	<thead>
 		<tr>
@@ -17,24 +19,59 @@
 	<tbody>
 		@foreach (var item in Model)
 		{
+			subtotal = item.Quantity * item.Price;
+			total += subtotal;
 			<tr>
-				<th>#</th>
-				<th scope="row">@item.OrderCode</th>
-				@* <td>@item.UserName</td> *@
-				@* <td>@item.CreateDate</td> *@
-				@* <td> *@
-				@* 	@if (item.Status == 1) *@
-				@* 	{ *@
-				@* 		<span class="text text-success">New order</span> *@
-				@* 	} *@
-				@* 	else *@
-				@* 	{ *@
-				@* 		<span class="text text-danger">Success order</span> *@
-				@* 	} *@
-				@* </td> *@
+				<input type="hidden" asp-for="@item.OrderCode" class="getId" />
+				<td>@item.Id</td>
+				<td>@item.OrderCode</td>
+				<td>@item.UserName</td> 
+				<td>@item.Product.Name</td>
+				<td>$@item.Price</td>
+				<td>@item.Quantity</td>
+				<td>@subtotal.ToString("C")</td>
 			</tr>
+				<tr>
+					<th colspan="5">Total: </th>
+					<td>@total.ToString("C")</td>
+					<td><select class="form-control select-update-order">
+						<option value="1">New order</option>
+						<option value="0">Processed</option>
+					</select>
+					</td>
+				</tr>
 		}
 	</tbody>
 </table>
+@section Scripts {
+	<script>
+		$(document).ready(function () {
+			$('.select-update-order').change(function () {
+				var status = $(this).val();
+				var ordercode = $(this).closest("tr").prev().find(".getId").val();
+
+				$.ajax({
+					type: "POST",
+					url: "@Url.Action("UpdateOrder", "Order", new { area = "Admin" })",
+					data: {
+						status: status,
+						ordercode: ordercode,
+						__RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+					},
+					success: function (result) {
+		                if (result.success) {
+			               Swal.fire("Update successfully!").then(() => {
+				           window.location.href = "/Admin/Order/Index";
+			               });
+		                }
+					    else {
+							Swal.fire("Update failed: " + result.message);
+						}
+					}
+				});
+			});
+		});
+	</script>
+}
 
 

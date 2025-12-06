@@ -20,13 +20,14 @@
 
 						<div class="productinfo text-center">
 							<a asp-action="Details" asp-controller="Product" asp-route-id="@item.Id">
-								<img src="~/media/products/@item.Image" alt="@item.Description" width="100%" />
+								<img src="~/media/products/@item.Image" alt="@item.Description" width="100px" height="200px" />
 								<h2>$@item.Price</h2>
 								<p>@item.Name</p>
 								<p>Category @item.Category.Name</p>
 								<p>Brand @item.Brand.Name</p>
 							</a>
-							<a class="btn btn-default add-to-cart" asp-action="Add" asp-controller="Cart" asp-route-id="@item.Id"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+							@* <a class="btn btn-default add-to-cart" asp-action="Add" asp-controller="Cart" asp-route-id="@item.Id"><i class="fa fa-shopping-cart"></i>Add to cart</a> *@
+							<button class="btn btn-default add-to-cart" data-product_id="@item.Id"><i class="fa fa-shopping-cart"></i>Add to cart</button>
 						</div>
 
 					</div>
@@ -41,7 +42,23 @@
 			</div>
 		}
 	</div><!--features_items-->
-
-
-
 </div>
+@section Scripts {
+	<script>
+				$('.add-to-cart').click(function () {
+			var Id = $(this).data("product_id");
+
+			$.ajax({
+				type: "POST",
+				url: "@Url.Action("Add", "Cart")",
+				data: { Id: Id },
+
+				success: function (result) {
+					if (result.success) {
+						Swal.fire("Add to cart successfully!");
+					}
+				}
+			});
+		});
+	</script>
+}
