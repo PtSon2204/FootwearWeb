@@ -9,7 +9,7 @@
 			<!--product-details-->
 			<div class="col-sm-5">
 				<div class="view-product">
-					<img src="~/images/@Model.Image" alt="" />
+					<img src="~/media/products/@Model.Image" alt="" width="100px" height="200px"/>
 					<h3>ZOOM</h3>
 				</div>
 				<div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -40,7 +40,7 @@
 					<h2>@Model.Name</h2>
 
 					<span>
-						<span>US $@Model.Price</span>
+						<span>@Model.Price.ToString("#, ##0 VNĐ")</span>
 						<label>Quantity:</label>
 						<input type="text" value="1" />
 						<button type="button" class="btn btn-fefault cart">
