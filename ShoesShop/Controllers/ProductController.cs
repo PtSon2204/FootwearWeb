@@ -24,5 +24,19 @@ namespace ShoesShop.Controllers
             var productById = _dataContext.Products.Where(p => p.Id == Id).FirstOrDefault();
             return View(productById);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Search(string searchTerm)
+        {
+            var products = await _dataContext.Products.Where(p => p.Name.ToLower().Contains(searchTerm.ToLower()) || p.Description.ToLower().Contains(searchTerm.ToLower())).ToListAsync();
+
+            if (products == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Keyword = searchTerm;
+            return View(products);
+        }
     }
 }

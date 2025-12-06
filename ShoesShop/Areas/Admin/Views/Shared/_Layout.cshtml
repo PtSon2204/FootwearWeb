@@ -9,7 +9,8 @@
 	<link href="~/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css" rel="stylesheet">
-	<link href="~/css/prettyPhoto.css" rel="stylesheet">
+
+	<link href="//cdn.datatables.net/2.3.5/css/dataTables.dataTables.min.css" rel="stylesheet">
 	<link href="~/css/price-range.css" rel="stylesheet">
 	<link href="~/css/animate.css" rel="stylesheet">
 	<link href="~/css/main.css" rel="stylesheet">
@@ -115,8 +116,10 @@
 	<script src="~/js/jquery.scrollUp.min.js"></script>
 	<script src="~/js/price-range.js"></script>
 	<script src="~/js/jquery.prettyPhoto.js"></script>
+	<script src="~//cdn.datatables.net/2.3.5/js/dataTables.min.js"></script>
 	<script src="~/js/main.js"></script>
 	<script src="~/backend/js/site.js"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js"></script>
 	<script>
 		$(function() {
@@ -125,6 +128,10 @@
 			Swal.fire(message)
 		});
 	</script>
+		<script>
+			let table = new DataTable('#myTable');
+		</script>
+	
 	@await RenderSectionAsync("Scripts", required:false)
 </body>
 </html>

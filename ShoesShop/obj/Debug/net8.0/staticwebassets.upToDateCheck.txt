@@ -78,9 +78,18 @@ wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 wwwroot\media\products\0cc5e0a5-8a2e-40c5-8489-0b2ec6f3cd03_Mlb1.jpg
+wwwroot\media\products\31b576e1-63b9-4089-8877-00cf56651a8c_13.png
 wwwroot\media\products\59af7a4c-49e3-450e-a28b-f1eda67cdd7a_dep_nike1.png
-wwwroot\media\products\5ce00ef2-2e8a-4809-b720-02eb58ae085d_Screenshot 2025-11-13 224333.png
-wwwroot\media\products\60bf1177-7299-4c8c-8c3d-fc0f74d6e2d0_Screenshot 2025-10-20 142157.png
+wwwroot\media\products\5f341ee1-3346-49f4-9816-f1fcd0e8aaa7_3.jpg
+wwwroot\media\products\6c885368-d256-44eb-9785-67a1f36040f1_7.jpg
 wwwroot\media\products\76575047-2da8-45e1-84c4-7520a455c2f3_2.jpg
+wwwroot\media\products\87c8920a-9636-4942-8ecd-a6a427180512_9.jpg
+wwwroot\media\products\9859afc2-c488-43c9-bbdf-6ef77ff1a571_8.jpg
+wwwroot\media\products\ae6dafae-b08d-46c1-a666-f0986b4f0c49_11.jpg
+wwwroot\media\products\b170beef-20ce-43b4-b8ea-2746380ad97a_6.jpg
+wwwroot\media\products\b6f4c818-7273-480c-b6c2-8dce62375371_4.jpg
+wwwroot\media\products\bab23811-2ed6-4c52-a515-59ef89fe5f32_1.png
+wwwroot\media\products\dc777913-9102-45e8-a486-a9e9d585f28a_10.jpg
 wwwroot\media\products\dep_nike1.png
+wwwroot\media\products\df64f8c4-6dd5-4195-a72e-aff939e5a36c_2.jpg
 wwwroot\media\products\Mlb1.jpg

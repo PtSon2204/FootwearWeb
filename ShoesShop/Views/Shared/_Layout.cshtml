@@ -141,9 +141,12 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search" />
-						</div>
+						<form asp-controller="Product" asp-action="Search" method="post">
+							<div class="search_box pull-right">
+								<input type="text" placeholder="Search" name="searchTerm"/>
+								<button class="btn btn-warning" type="submit">Search</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -367,13 +370,7 @@
 	<script src="~/js/jquery.prettyPhoto.js"></script>
 	<script src="~/js/main.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js"></script>
-	<script>
-		$(function() {
-			var message = '@TempData["success"]';
-			if (message != '')
-			Swal.fire(message)
-		});
-	</script>
+	
 	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
