@@ -46,7 +46,7 @@ namespace ShoesShop.Controllers
 
             TempData["success"] = "Add Item to cart Successfully";
 
-            return Redirect(Request.Headers["Referer"].ToString());
+             return Json(new { success = true });
         }
 
         public async Task<IActionResult> Decrease(long Id)
