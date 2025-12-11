@@ -23,23 +23,50 @@
 				<th scope="row">@item.OrderCode</th>
 				<td>@item.UserName</td>
 				<td>@item.CreateDate</td>
+
 				<td>
-					@if (item.Status == 1)
-					{
-						<span class="text text-success">New order</span>
+					@{
+						string statusText = "";
+						string statusClass = "";
+
+						switch (item.Status)
+						{
+							case 1: // New order
+								statusText = "New order";
+								statusClass = "text-info";
+								break;
+							case 2: // Processing
+								statusText = "Processing";
+								statusClass = "text-warning";
+								break;
+							case 3: // Success
+								statusText = "Success";
+								statusClass = "text-success";
+								break;
+							case 0: // Reject
+								statusText = "Rejected";
+								statusClass = "text-danger";
+								break;
+							default:
+								statusText = "Unknown";
+								statusClass = "text-secondary";
+								break;
+						}
 					}
-					else
-					{
-						<span class="text text-danger">Success order</span>
-					}
+					<span class="text @statusClass">@statusText</span>
 				</td>
 				<td>
 					<a asp-action="ViewOrder" class="btn btn-warning btn-sm" asp-controller="Order" asp-route-ordercode="@item.OrderCode">View Order</a>
-					<a asp-action="Delete" class="btn btn-danger btn-sm confirmDeletion" asp-controller="Order" asp-route-Id="@item.Id">Delete</a>
 				</td>
 			</tr>
 		}
 	</tbody>
 </table>
 
-
+@section Scripts {
+	<script>
+		$(document).ready(function () {
+			$('#myTable').DataTable();
+		});
+	</script>
+}

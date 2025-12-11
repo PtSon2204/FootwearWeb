@@ -61,7 +61,7 @@ namespace ShoesShop.Areas.Admin.Controllers
                     product.Image = imageName;
                 }
 
-                _dataContext.Add(product);
+                _dataContext.Products.Add(product);
                 await _dataContext.SaveChangesAsync();
                 TempData["success"] = "Add product successfully!";
                 return RedirectToAction("Index");
@@ -132,7 +132,7 @@ namespace ShoesShop.Areas.Admin.Controllers
                             System.IO.File.Delete(oldfilePath);
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         ModelState.AddModelError("", "An error occurred while deleting the product image.");
                     }
@@ -149,7 +149,7 @@ namespace ShoesShop.Areas.Admin.Controllers
                 existed_product.CategoryId = product.CategoryId;
                 existed_product.BrandId = product.BrandId;
 
-                _dataContext.Update(existed_product);
+                _dataContext.Products.Update(existed_product);
                 await _dataContext.SaveChangesAsync();
                 TempData["success"] = "Update product successfully!";
                 return RedirectToAction("Index");
@@ -188,7 +188,7 @@ namespace ShoesShop.Areas.Admin.Controllers
                     System.IO.File.Delete(oldfilePath);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ModelState.AddModelError("", "An error occurred while deleting the product image.");
             }

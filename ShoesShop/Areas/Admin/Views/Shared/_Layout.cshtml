@@ -11,6 +11,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css" rel="stylesheet">
 
 	<link href="//cdn.datatables.net/2.3.5/css/dataTables.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/buttons/3.2.5/css/buttons.dataTables.css" rel="stylesheet">
+
 	<link href="~/css/price-range.css" rel="stylesheet">
 	<link href="~/css/animate.css" rel="stylesheet">
 	<link href="~/css/main.css" rel="stylesheet">
@@ -33,8 +35,6 @@
 			<!--header_top-->
 			<div class="container">
 				<div class="row">
-
-					
 				</div>
 			</div>
 		</div><!--/header_top-->
@@ -48,11 +48,9 @@
 							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
-
-							
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div><!--/header-middle-->
@@ -72,13 +70,15 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a asp-controller="Home" class="active">Home</a></li>
-								<li><a asp-controller="Product">Products</a></li>
-								<li><a asp-controller="Category">Categories</a></li>
-								<li><a asp-controller="Brand">Brands</a></li>
-								<li><a asp-controller="Order" asp-action="Index">Orders</a></li>
-								<li><a asp-controller="Role">Roles</a></li>
-								<li><a asp-controller="User" >Users</a></li>
+								<li><a asp-action="Index" asp-controller="Home" class="active">Home</a></li>
+								<li><a asp-action="Index" asp-controller="Slider">Sliders</a></li>
+								<li><a asp-action="Index" asp-controller="Product">Products</a></li>
+								<li><a asp-action="Index" asp-controller="Category">Categories</a></li>
+								<li><a asp-action="Index" asp-controller="Brand">Brands</a></li>
+								<li><a asp-action="Index" asp-controller="Order">Orders</a></li>
+								<li><a asp-action="Index" asp-controller="Role">Roles</a></li>
+								<li><a asp-action="Index" asp-controller="User">Users</a></li>
+								<li><a asp-action="Index" asp-controller="Contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -105,7 +105,7 @@
 
 	<footer id="footer">
 		<!--Footer-->
-	
+
 
 	</footer><!--/Footer-->
 
@@ -117,6 +117,15 @@
 	<script src="~/js/price-range.js"></script>
 	<script src="~/js/jquery.prettyPhoto.js"></script>
 	<script src="~//cdn.datatables.net/2.3.5/js/dataTables.min.js"></script>
+
+	<script src="https://cdn.datatables.net/buttons/3.2.5/js/dataTables.buttons.js"></script>
+	<script src="https://cdn.datatables.net/buttons/3.2.5/js/buttons.dataTables.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/3.2.5/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/3.2.5/js/buttons.print.min.js"></script>
+
 	<script src="~/js/main.js"></script>
 	<script src="~/backend/js/site.js"></script>
 
@@ -128,10 +137,16 @@
 			Swal.fire(message)
 		});
 	</script>
-		<script>
-			let table = new DataTable('#myTable');
-		</script>
-	
-	@await RenderSectionAsync("Scripts", required:false)
+	<script>
+			let table = new DataTable('#myTable', {
+				 layout: {
+					topStart: {
+					   buttons: ['excel', 'copy', 'csv', 'pdf', 'print']
+		     	   }
+	         	}
+			});
+	</script>
+
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

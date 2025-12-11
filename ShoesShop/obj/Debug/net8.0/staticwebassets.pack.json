@@ -321,6 +321,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\logoContact\\4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png",
+      "PackagePath": "staticwebassets\\media\\logoContact\\4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png"
+    },
+    {
+      "Id": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\logoContact\\f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png",
+      "PackagePath": "staticwebassets\\media\\logoContact\\f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png"
+    },
+    {
       "Id": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\products\\0cc5e0a5-8a2e-40c5-8489-0b2ec6f3cd03_Mlb1.jpg",
       "PackagePath": "staticwebassets\\media\\products\\0cc5e0a5-8a2e-40c5-8489-0b2ec6f3cd03_Mlb1.jpg"
     },
@@ -383,6 +391,22 @@
     {
       "Id": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\products\\df64f8c4-6dd5-4195-a72e-aff939e5a36c_2.jpg",
       "PackagePath": "staticwebassets\\media\\products\\df64f8c4-6dd5-4195-a72e-aff939e5a36c_2.jpg"
+    },
+    {
+      "Id": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.jpg",
+      "PackagePath": "staticwebassets\\media\\sliders\\10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.jpg"
+    },
+    {
+      "Id": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.jpg",
+      "PackagePath": "staticwebassets\\media\\sliders\\ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.jpg"
+    },
+    {
+      "Id": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner….jpg",
+      "PackagePath": "staticwebassets\\media\\sliders\\c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner….jpg"
+    },
+    {
+      "Id": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg",
+      "PackagePath": "staticwebassets\\media\\sliders\\f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ShoesShop.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

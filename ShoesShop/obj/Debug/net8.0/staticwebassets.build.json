@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3HbkfsHa5cPNWzGn9z6uJKg5Uobor9cqbAhdsJZ+i58=",
+  "Hash": "puvhe/uQvXYIFNhB6gHwcBA56tX0EX1ljsLnIf/9gbs=",
   "Source": "ShoesShop",
   "BasePath": "_content/ShoesShop",
   "Mode": "Default",
@@ -1718,6 +1718,48 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\logoContact\\4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png",
+      "SourceId": "ShoesShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\",
+      "BasePath": "_content/ShoesShop",
+      "RelativePath": "media/logoContact/4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ud2dbze5in",
+      "Integrity": "UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\logoContact\\4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png"
+    },
+    {
+      "Identity": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\logoContact\\f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png",
+      "SourceId": "ShoesShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\",
+      "BasePath": "_content/ShoesShop",
+      "RelativePath": "media/logoContact/f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ud2dbze5in",
+      "Integrity": "UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\logoContact\\f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png"
+    },
+    {
       "Identity": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\products\\0cc5e0a5-8a2e-40c5-8489-0b2ec6f3cd03_Mlb1.jpg",
       "SourceId": "ShoesShop",
       "SourceType": "Discovered",
@@ -2052,6 +2094,90 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\products\\Mlb1.jpg"
+    },
+    {
+      "Identity": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.jpg",
+      "SourceId": "ShoesShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\",
+      "BasePath": "_content/ShoesShop",
+      "RelativePath": "media/sliders/10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xiqrz2e7uo",
+      "Integrity": "CapOLpud/rlNl8pkJfElKJLs4LiSxiwzLZpzT9JRgEM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\sliders\\10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.jpg"
+    },
+    {
+      "Identity": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.jpg",
+      "SourceId": "ShoesShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\",
+      "BasePath": "_content/ShoesShop",
+      "RelativePath": "media/sliders/ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ssiltzxq86",
+      "Integrity": "lHThZBGW8+r5R5k/0j6spuJEgM3k/7yGzukyHqw0mgY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\sliders\\ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.jpg"
+    },
+    {
+      "Identity": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner….jpg",
+      "SourceId": "ShoesShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\",
+      "BasePath": "_content/ShoesShop",
+      "RelativePath": "media/sliders/c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner…#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hklpni9rvk",
+      "Integrity": "cYgmtlvOk/YKVPe/8iNWNYoFOEPhqTo100/2fs4D2Bc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\sliders\\c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner….jpg"
+    },
+    {
+      "Identity": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg",
+      "SourceId": "ShoesShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\",
+      "BasePath": "_content/ShoesShop",
+      "RelativePath": "media/sliders/f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7hl87urn6g",
+      "Integrity": "RdLC6sNSj7CevBhSfUm+RuLczIYjOB44ZD+mKB88jmQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\sliders\\f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg"
     }
   ],
   "Endpoints": [
@@ -8534,6 +8660,170 @@
       ]
     },
     {
+      "Route": "media/logoContact/4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\logoContact\\4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51610"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Dec 2025 03:54:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78="
+        }
+      ]
+    },
+    {
+      "Route": "media/logoContact/4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.ud2dbze5in.png",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\logoContact\\4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51610"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Dec 2025 03:54:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ud2dbze5in"
+        },
+        {
+          "Name": "label",
+          "Value": "media/logoContact/4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78="
+        }
+      ]
+    },
+    {
+      "Route": "media/logoContact/f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\logoContact\\f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51610"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Dec 2025 04:01:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78="
+        }
+      ]
+    },
+    {
+      "Route": "media/logoContact/f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.ud2dbze5in.png",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\logoContact\\f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51610"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 11 Dec 2025 04:01:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ud2dbze5in"
+        },
+        {
+          "Name": "label",
+          "Value": "media/logoContact/f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78="
+        }
+      ]
+    },
+    {
       "Route": "media/products/0cc5e0a5-8a2e-40c5-8489-0b2ec6f3cd03_Mlb1.68jyedl397.jpg",
       "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\products\\0cc5e0a5-8a2e-40c5-8489-0b2ec6f3cd03_Mlb1.jpg",
       "Selectors": [],
@@ -9846,6 +10136,334 @@
       ]
     },
     {
+      "Route": "media/sliders/10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.jpg",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "647857"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CapOLpud/rlNl8pkJfElKJLs4LiSxiwzLZpzT9JRgEM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 09 Dec 2025 05:45:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CapOLpud/rlNl8pkJfElKJLs4LiSxiwzLZpzT9JRgEM="
+        }
+      ]
+    },
+    {
+      "Route": "media/sliders/10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.xiqrz2e7uo.jpg",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "647857"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CapOLpud/rlNl8pkJfElKJLs4LiSxiwzLZpzT9JRgEM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 09 Dec 2025 05:45:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xiqrz2e7uo"
+        },
+        {
+          "Name": "label",
+          "Value": "media/sliders/10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CapOLpud/rlNl8pkJfElKJLs4LiSxiwzLZpzT9JRgEM="
+        }
+      ]
+    },
+    {
+      "Route": "media/sliders/ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.jpg",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8764657"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lHThZBGW8+r5R5k/0j6spuJEgM3k/7yGzukyHqw0mgY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 09 Dec 2025 05:45:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lHThZBGW8+r5R5k/0j6spuJEgM3k/7yGzukyHqw0mgY="
+        }
+      ]
+    },
+    {
+      "Route": "media/sliders/ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.ssiltzxq86.jpg",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8764657"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lHThZBGW8+r5R5k/0j6spuJEgM3k/7yGzukyHqw0mgY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 09 Dec 2025 05:45:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ssiltzxq86"
+        },
+        {
+          "Name": "label",
+          "Value": "media/sliders/ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lHThZBGW8+r5R5k/0j6spuJEgM3k/7yGzukyHqw0mgY="
+        }
+      ]
+    },
+    {
+      "Route": "media/sliders/c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner….hklpni9rvk.jpg",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner….jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33860"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cYgmtlvOk/YKVPe/8iNWNYoFOEPhqTo100/2fs4D2Bc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 09 Dec 2025 05:46:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hklpni9rvk"
+        },
+        {
+          "Name": "label",
+          "Value": "media/sliders/c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner….jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cYgmtlvOk/YKVPe/8iNWNYoFOEPhqTo100/2fs4D2Bc="
+        }
+      ]
+    },
+    {
+      "Route": "media/sliders/c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner….jpg",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍\uD83C\uDFFB\uD83D\uDDA5 shoes concept webdesigner….jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33860"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cYgmtlvOk/YKVPe/8iNWNYoFOEPhqTo100/2fs4D2Bc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 09 Dec 2025 05:46:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cYgmtlvOk/YKVPe/8iNWNYoFOEPhqTo100/2fs4D2Bc="
+        }
+      ]
+    },
+    {
+      "Route": "media/sliders/f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.7hl87urn6g.jpg",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11040"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RdLC6sNSj7CevBhSfUm+RuLczIYjOB44ZD+mKB88jmQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 09 Dec 2025 05:46:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7hl87urn6g"
+        },
+        {
+          "Name": "label",
+          "Value": "media/sliders/f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RdLC6sNSj7CevBhSfUm+RuLczIYjOB44ZD+mKB88jmQ="
+        }
+      ]
+    },
+    {
+      "Route": "media/sliders/f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg",
+      "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\wwwroot\\media\\sliders\\f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11040"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RdLC6sNSj7CevBhSfUm+RuLczIYjOB44ZD+mKB88jmQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 09 Dec 2025 05:46:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RdLC6sNSj7CevBhSfUm+RuLczIYjOB44ZD+mKB88jmQ="
+        }
+      ]
+    },
+    {
       "Route": "ShoesShop.bundle.scp.css",
       "AssetFile": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ShoesShop.bundle.scp.css",
       "Selectors": [],
@@ -9868,7 +10486,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Nov 2025 03:03:42 GMT"
+          "Value": "Tue, 09 Dec 2025 03:12:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9905,7 +10523,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Nov 2025 03:03:42 GMT"
+          "Value": "Tue, 09 Dec 2025 03:12:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9942,7 +10560,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Nov 2025 03:03:42 GMT"
+          "Value": "Tue, 09 Dec 2025 03:12:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9987,7 +10605,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 20 Nov 2025 03:03:42 GMT"
+          "Value": "Tue, 09 Dec 2025 03:12:43 GMT"
         },
         {
           "Name": "Cache-Control",

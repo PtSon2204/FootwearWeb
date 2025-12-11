@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ShoesShop.Areas.Admin.Controllers
 {
@@ -8,29 +12,40 @@ namespace ShoesShop.Areas.Admin.Controllers
     public class OrderController : Controller
     {
         private readonly DataContext _dataContext;
+
         public OrderController(DataContext dataContext)
         {
             _dataContext = dataContext;
         }
+
         public async Task<IActionResult> Index()
         {
             return View(await _dataContext.Orders.OrderByDescending(o => o.Id).ToListAsync());
-        } 
+        }
 
         public async Task<IActionResult> ViewOrder(string ordercode)
         {
-            var orderDetails = await _dataContext.OrderDetails.Include(od => od.Product).Where(od => od.OrderCode == ordercode).ToListAsync();
+            var orderDetails = await _dataContext.OrderDetails
+                .Include(od => od.Product)
+                .Where(od => od.OrderCode == ordercode)
+                .ToListAsync();
+
+            var order = await _dataContext.Orders.FirstOrDefaultAsync(o => o.OrderCode == ordercode);
+
+            ViewBag.CurrentStatus = order?.Status ?? 1; 
+
             return View(orderDetails);
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateOrder (string ordercode, int status)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateOrder(string ordercode, int status)
         {
             var order = await _dataContext.Orders.FirstOrDefaultAsync(o => o.OrderCode == ordercode);
 
             if (order == null)
             {
-                return NotFound();
+                return NotFound(new { success = false, message = $"Order with code {ordercode} not found." });
             }
 
             order.Status = status;
@@ -39,22 +54,10 @@ namespace ShoesShop.Areas.Admin.Controllers
                 await _dataContext.SaveChangesAsync();
                 return Ok(new { success = true, message = "Order status updated successfully!" });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return StatusCode(500, "An error occured while updating the order status.");
+                return StatusCode(500, new { success = false, message = "An error occurred while updating the order status." });
             }
         }
-
-        //[HttpGet]
-        //public async Task<IActionResult> Delete(string ordercode)
-        //{
-        //    var order = await _dataContext.Orders.FirstOrDefaultAsync(o => o.OrderCode == ordercode);
-
-        //    if (order == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //}
-
     }
 }
