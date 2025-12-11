@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ContactModel>
+@{
+	ViewData["title"] = "Contact Info";
+}
+<h1>Contact Info</h1>
+<a class="btn btn-primary" asp-action="Create" asp-controller="Brand">Add Brand</a>
+<table class="table" id="myTable">
+	<thead>
+		<tr>
+			<th scope="col"> Name</th>
+			<th scope="col"> Description</th>
+			<th scope="col"> Map</th>
+			<th scope="col"> Email</th>
+			<th scope="col"> Phone</th>
+			<th scope="col">Image</th>
+			<th scope="col">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Name</td>
+				<td>@Html.Raw(@item.Description)</td>
+				<td>
+					<iframe width="300"
+							height="200"
+							style="border:0;"
+							allowfullscreen
+							loading="lazy"
+							src="https://www.google.com/maps/embed?pb=@item.Map">
+					</iframe>
+				</td>
+				<th scope="col"> @item.Email</th>
+				<td>@item.Phone</td>
+				<td><img src="~/media/logoContact/@item.LogoImg" width="120px" height="150px" /></td>
+
+				<td>
+					<a asp-action="Edit" class="btn btn-warning btn-sm" asp-controller="Contact">Edit</a>
+					<a asp-action="Delete" class="btn btn-danger btn-sm confirmDeletion" asp-controller="Contact" >Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+

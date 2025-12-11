@@ -1,0 +1,26 @@
+﻿@model ContactModel
+
+<div class="row">
+	<div class="col-sm-3">
+		<div class="companyinfo">
+			<p><img src="~/media/logoContact/@Model.LogoImg" width="200px" height="120px" /></p>
+			<p>@Html.Raw(Model.Description)</p>
+		</div>
+	</div>
+	<div class="col-sm-6 col-md-5" style="width: 578px; margin-top: 25px;">
+		<iframe width="600"
+				height="200"
+				style="border:0;"
+				allowfullscreen
+				loading="lazy"
+				src="https://www.google.com/maps/embed?pb=@Model.Map">
+		</iframe>
+	</div>
+	<div class="col-sm-3">
+		<div style=" margin-left: 44%;margin-top: 21%;" class="address">
+			<h5>Name: @Model.Name </h5>
+			<h5>Email: @Model.Email</h5>
+			<h5>Phone: @Model.Phone</h5>
+		</div>
+	</div>
+</div>
