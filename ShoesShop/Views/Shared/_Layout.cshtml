@@ -95,9 +95,9 @@
 								@if(User.Identity?.IsAuthenticated ?? false)
 								{
 									<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-									<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-									<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-									<li><a href="#"><i class="fa fa-star"></i> Compare</a></li>
+									<li><a href="#"> Account</a></li>
+									<li><a asp-action="Wishlist" asp-controller="Home"><i class="fa fa-heart"></i> Wishlist</a></li>
+									<li><a asp-action="Compare" asp-controller="Home"><i class="fa fa-star"></i> Compare</a></li>
 									if (User.IsInRole("admin"))
 									{
 										<li><a asp-area="Admin" asp-controller="Product" asp-action="Index">Admin Panel</a></li>
@@ -166,7 +166,7 @@
 			<div class="row">
 				@* @Html.Partial("_NotificationPartial") *@
 				<partial name="_NotificationPartial" />
-				@RenderBody()
+				@RenderBody() @* cái này nó sẽ nhận view trả về 1 trang nào đó*@
 			</div>
 		</div>
 	</section>

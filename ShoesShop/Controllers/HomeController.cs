@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -120,6 +121,55 @@ namespace ShoesShop.Controllers
                 _logger.LogError(ex, "Error adding to compare list.");
                 return StatusCode(500, new { success = false, message = "An error occurred while adding to compare list." });
             }
+        }
+
+        public async Task<IActionResult> Compare()
+        {
+            var compare_product = await (from c in _dataContext.Compares
+                                         join p in _dataContext.Products on c.ProductId equals p.Id
+                                         join u in _dataContext.Users on c.UserId equals u.Id
+                                         select new
+                                         {
+                                             User = u,
+                                             Product = p,
+                                             Compares = c
+                                         }).ToListAsync();
+
+            return View(compare_product);
+        }
+
+        public async Task<IActionResult> Wishlist()
+        {
+            var wishlist_product = await (from w in _dataContext.Wishlists
+                                          join p in _dataContext.Products on w.ProductId equals p.Id
+                                          join u in _dataContext.Users on w.UserId equals u.Id
+                                          select new
+                                          {
+                                              User = u,
+                                              Product = p,
+                                              Wishlist = w
+                                          }).ToListAsync();
+
+            return View(wishlist_product);
+        }
+
+        public async Task<IActionResult> DeleteCompare(int Id)
+        {
+            CompareModel compare = await _dataContext.Compares.FindAsync(Id);
+
+            _dataContext.Compares.Remove(compare);
+            await _dataContext.SaveChangesAsync();
+            TempData["success"] = "Product in compare delete successfully!";
+            return RedirectToAction("Compare", "Home");
+        }
+        public async Task<IActionResult> DeleteWishlist(int Id)
+        {
+            WishlistModel wishlist = await _dataContext.Wishlists.FindAsync(Id);
+
+            _dataContext.Wishlists.Remove(wishlist);
+            await _dataContext.SaveChangesAsync();
+            TempData["success"] = "Product in wishlist delete successfully!";
+            return RedirectToAction("Wishlist", "Home");
         }
     }
 }
