@@ -17,6 +17,8 @@ namespace ShoesShop.Models
         [Required(ErrorMessage = "Product price required")]
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than 0")]
         public decimal Price { get; set; }
+        public int Quantity { get; set; }
+        public int Sold { get; set; }
         public int BrandId { get; set; }
         public int CategoryId { get; set; }
 

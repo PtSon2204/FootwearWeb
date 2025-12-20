@@ -23,7 +23,14 @@
 								<p>@item.Name</p>
 								<p>Category @item.Category.Name</p>
 								<p>Brand @item.Brand.Name</p>
-								<a class="btn btn-default add-to-cart" asp-action="Add" asp-controller="Cart" asp-route-id="@item.Id"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+								@if (item.Quantity > 0)
+								{
+									<a class="btn btn-default add-to-cart" asp-action="Add" asp-controller="Cart" asp-route-id="@item.Id"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+								}
+								else
+								{
+									<button class="btn btn-default"><i class="fa fa-shopping-cart"></i>Sold out</button>
+								}
 							</div>
 						</div>
 					</a>

@@ -80,17 +80,31 @@ namespace ShoesShop.Controllers
 
         public async Task<IActionResult> Increase(long Id)
         {
+            ProductModel product = await _dataContext.Products.Where(p => p.Id == Id).FirstOrDefaultAsync();
+
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
 
             CartItemModel cartItem = cart.Where(x => x.ProductId == Id).FirstOrDefault();
 
-            if (cartItem.Quantity >= 1)
+            if (cartItem.Quantity >= 1 && product.Quantity > cartItem.Quantity)
             {
                 ++cartItem.Quantity;
+                TempData["success"] = "Increase Product Quantity to cart successfully";
             }
-
-            HttpContext.Session.SetJson("Cart", cart);
-
+            else
+            {
+                cartItem.Quantity = product.Quantity;
+                TempData["success"] = "Maxium Product Quantity to cart";
+            }
+            if (cart.Count == 0)
+            {
+                HttpContext.Session.Remove("Cart");
+            }
+            else
+            { 
+                HttpContext.Session.SetJson("Cart", cart);
+            }
+               
             TempData["success"] = "Increase Item quantity to cart Successfully";
 
             return RedirectToAction("Index");
