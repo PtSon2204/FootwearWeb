@@ -91,9 +91,10 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								@if(User.Identity?.IsAuthenticated ?? false)
 								{
+									<li><a asp-action="Index" asp-controller="Cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+
 									<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 									<li><a href="#"> Account</a></li>
 									<li><a asp-action="Wishlist" asp-controller="Home"><i class="fa fa-heart"></i> Wishlist</a></li>
@@ -137,7 +138,7 @@
 										<li><a asp-controller="Category">Category</a></li>
 										<li><a asp-controller="Product">Product Details</a></li>
 										<li><a asp-controller="Cart" asp-action="Checkout">Checkout</a></li>
-										<li><a asp-controller="Cart">Cart</a></li>
+										<li><a asp-controller="Cart" asp-action="Index">Cart</a></li>
 										<li><a asp-controller="Account" asp-action="Login">Login</a></l>
 									</ul>
 								</li>

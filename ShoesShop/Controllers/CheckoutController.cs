@@ -39,6 +39,12 @@ namespace ShoesShop.Controllers
                     orderDetails.ProductId = item.ProductId;
                     orderDetails.Price = item.Price;
                     orderDetails.Quantity = item.Quantity;
+
+                    var product = await _dataContext.Products.Where(p => p.Id == item.ProductId).FirstOrDefaultAsync();
+                    product.Quantity -= item.Quantity;
+                    product.Sold += item.Quantity;
+                    _dataContext.Update(product);
+
                     _dataContext.OrderDetails.Add(orderDetails);
                     _dataContext.SaveChanges();
                 }

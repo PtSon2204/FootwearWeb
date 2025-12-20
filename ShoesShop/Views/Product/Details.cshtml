@@ -48,10 +48,19 @@
 						<span>@Model.ProductDetails.Price.ToString("#, ##0 VNĐ")</span>
 						<label>Quantity:</label>
 						<input type="text" value="1" />
-						<button type="button" class="btn btn-fefault cart">
-							<i class="fa fa-shopping-cart"></i>
-							Add to cart
-						</button>
+						@if (Model.ProductDetails.Quantity > 0)
+						{
+							<button type="button" class="btn btn-fefault cart">
+								<i class="fa fa-shopping-cart"></i>
+								Add to cart
+							</button>
+						} else
+						{
+							<button type="button" class="btn btn-fefault">
+								<i class="fa fa-shopping-cart"></i>
+								Sold out
+							</button>
+						}
 					</span>
 					<p><b>Availability:</b> In Stock</p>
 					<p><b>Condition:</b> New</p>
@@ -66,10 +75,10 @@
 			<!--category-tab-->
 			<div class="col-sm-12">
 				<ul class="nav nav-tabs">
-					<li><a href="#details" data-toggle="tab">Details</a></li>
+					<li class="active"><a href="#details" data-toggle="tab">Details</a></li>
 					<li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
 					<li><a href="#tag" data-toggle="tab">Tag</a></li>
-					<li class="active"><a href="#reviews" data-toggle="tab">Reviews</a></li>
+					<li><a href="#reviews" data-toggle="tab">Reviews</a></li>
 				</ul>
 			</div>
 			<div class="tab-content">

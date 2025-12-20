@@ -21,6 +21,7 @@ namespace ShoesShop.Areas.Admin.Controllers
         {
             return View(await _dataContext.Products.OrderByDescending(p => p.Id).Include(p => p.Category).Include(p => p.Brand).ToListAsync());
         }
+        #region CRUD Product
         [HttpGet]
         public IActionResult Create()
         {
@@ -197,6 +198,42 @@ namespace ShoesShop.Areas.Admin.Controllers
             await _dataContext.SaveChangesAsync();
             TempData["success"] = "Product deleted";
             return RedirectToAction("Index");
+        }
+
+        #endregion
+
+        // CRUD Quantity
+        [HttpGet] 
+        public async Task<IActionResult> AddQuantity(long Id)
+        {
+            var productByQuantity = await _dataContext.ProductsQuantities.Where(pq => pq.ProductId == Id).ToListAsync();
+            ViewBag.ProductByQuantity = productByQuantity;
+            ViewBag.Id = Id;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> StoreProductQuantity(ProductQuantityModel productQm)
+        {
+            var product = await _dataContext.Products.FindAsync(productQm.ProductId);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            product.Quantity += productQm.Quantity;
+            
+            productQm.Quantity = productQm.Quantity;
+            productQm.ProductId = productQm.ProductId;
+            productQm.DateCreated = DateTime.Now;
+
+            _dataContext.ProductsQuantities.Add(productQm);
+            await _dataContext.SaveChangesAsync();
+            TempData["success"] = "Add quantity successfully!";
+            return RedirectToAction("AddQuantity", "Product", new { Id = productQm.ProductId });
+
         }
     }
 }

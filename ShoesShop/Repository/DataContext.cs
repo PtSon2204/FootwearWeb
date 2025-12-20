@@ -21,5 +21,7 @@ namespace ShoesShop.Repository
         public DbSet<SliderModel> Sliders { get; set; }
         public DbSet<CompareModel> Compares { get; set; }
         public DbSet<WishlistModel> Wishlists { get; set; }
+        public DbSet<ProductQuantityModel> ProductsQuantities { get; set; }
+        public DbSet<ShipModel> Ships { get; set; }
     }
 }

@@ -9,6 +9,8 @@
 		<tr>
 			<th scope="col">Id</th>
 			<th scope="col">Product Name</th>
+			<th scope="col">Product Quantity</th>
+			<th>Product Sold</th>
 			<th scope="col">Product Description</th>
 			<th scope="col">Product Price</th>
 			<th scope="col">Product Image</th>
@@ -24,6 +26,8 @@
 			<tr>
 				<th scope="row">@item.Id</th>
 				<td>@item.Name</td>
+				<td><b>@item.Quantity</b><br/><a asp-controller="Product" asp-action="AddQuantity" asp-route-Id="@item.Id">Add Quantity</a></td>
+				<td><b>@item.Sold</b></td>
 				<td>@Html.Raw(@item.Description)</td>
 				<td>@item.Price.ToString("#, ##0 VNĐ")</td>
 				<td><img src="~/media/products/@item.Image" width="120" /></td>
