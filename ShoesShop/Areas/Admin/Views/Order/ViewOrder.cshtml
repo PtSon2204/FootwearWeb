@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<OrderDetails>
 @{
-    ViewData["title"] = "Order Details";
-    decimal total = 0;
-    decimal subtotal = 0;
+	ViewData["title"] = "Order Details";
+	decimal total = 0;
+	decimal subtotal = 0;
 
-    string currentOrderCode = Model.Any() ? Model.First().OrderCode : "";
-    int currentStatus = ViewBag.CurrentStatus ?? 1;
+	string currentOrderCode = Model.Any() ? Model.First().OrderCode : "";
+	int currentStatus = ViewBag.CurrentStatus ?? 1;
 }
 
 <h1>List OrderDetails</h1>
@@ -17,12 +17,13 @@
 	<thead>
 		<tr>
 			<th>Id</th>
-			<th >Order Code</th>
+			<th>Order Code</th>
 			<th> Username</th>
 			<th>Product Name</th>
 			<th>Product Price</th>
 			<th>Quantity</th>
 			<th>Subtotal</th>
+
 		</tr>
 	</thead>
 	<tbody>
@@ -47,14 +48,28 @@
 			<td></td>
 			<td></td>
 			<td>@total.ToString("#,##0 VND")</td>
-			
-            <td>
-				<select class="form-control select-update-order">
-					<option value="1" selected="@(currentStatus == 1)">New order</option>
-					<option value="2" selected="@(currentStatus == 2)">Processing</option>
-					<option value="3" selected="@(currentStatus == 3)">Success</option>
-					<option value="0" selected="@(currentStatus == 0)">Reject</option>
-				</select>
+			<td>
+				Shipping cost:
+				@if (ViewBag.ShippingCost != null)
+				{
+					@(((decimal)ViewBag.ShippingCost).ToString("#,##0 VND"))
+				}
+				else
+				{
+					<span>0 VND</span>
+				}
+			</td>
+
+			<td>
+				@if (@ViewBag.CurrentStatus != 0)
+				{
+					<select class="form-control select-update-order">
+						<option value="1" selected="@(currentStatus == 1)">New order</option>
+						<option value="2" selected="@(currentStatus == 2)">Processing</option>
+						<option value="3" selected="@(currentStatus == 3)">Success</option>
+						<option value="0" selected="@(currentStatus == 0)">Reject</option>
+					</select>
+				}
 			</td>
 		</tr>
 	

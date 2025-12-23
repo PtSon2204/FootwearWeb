@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ShoesShop.Models.ViewModels;
 
 namespace ShoesShop.Controllers
@@ -15,10 +16,23 @@ namespace ShoesShop.Controllers
         {
             List<CartItemModel> cartItem = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
 
+            var shippingPriceCookie = Request.Cookies["ShippingPrice"];
+            decimal shippingPrice = 0;
+
+            var coupon_code = Request.Cookies["CouponTitle"]; //coupontitle là tên cookie đặt bên dưới Hàm getcoupon
+
+            if (shippingPriceCookie != null)
+            {
+                var shippingPriceJson = shippingPriceCookie;
+                shippingPrice = JsonConvert.DeserializeObject<decimal>(shippingPriceJson);
+            }
+
             CartItemViewModel cartVM = new()
             {
                 Items = cartItem,
-                GrandTotal = cartItem.Sum(x => x.Quantity * x.Price)
+                GrandTotal = cartItem.Sum(x => x.Quantity * x.Price),
+                ShippingCost = shippingPrice,
+                CouponCode = coupon_code
             };
             return View(cartVM);
         }
@@ -135,6 +149,93 @@ namespace ShoesShop.Controllers
 
             TempData["success"] = "Clear all Item quantity to cart Successfully";
             return RedirectToAction("Index");
+        }
+
+        [HttpPost] 
+        public async Task<IActionResult> GetShipping(ShipModel ship, string provinces, string districts, string communues)
+        {
+            var existingShip = await _dataContext.Ships.FirstOrDefaultAsync(x => x.City == provinces && x.District == districts && x.Ward == communues);
+
+            decimal shippingPrice = 0;
+
+            if (existingShip != null)
+            {
+                shippingPrice = existingShip.Price;
+            }
+            else
+            {
+                shippingPrice = 50000;
+            }
+            var shippingPriceJson = JsonConvert.SerializeObject(shippingPrice);
+
+            try
+            {
+                var cookieOptions = new CookieOptions
+                {
+                    HttpOnly = true,
+                    Expires = DateTime.UtcNow.AddMinutes(30),
+                    Secure = true, //using Https
+                };
+                Response.Cookies.Append("ShippingPrice", shippingPriceJson, cookieOptions);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return Json(new { shippingPrice });
+        }
+
+        [HttpGet]
+        public IActionResult DeleteShipping()
+        {
+            Response.Cookies.Delete("ShippingPrice");
+            return RedirectToAction("Index", "Cart");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetCoupon(CouponModel couponModel, string coupon_value) 
+        {
+            var validCoupon = await _dataContext.Coupons.FirstOrDefaultAsync(x => x.Name == coupon_value);
+
+            string couponTitle = validCoupon + " - " + validCoupon?.Description;
+
+            if (couponTitle != null)
+            {
+                TimeSpan remainingTime = validCoupon.DateExpired - DateTime.Now;
+                int daysRemaining = remainingTime.Days;
+                
+                if (daysRemaining >= 0)
+                {
+                    try
+                    {
+                        var cookieOptions = new CookieOptions
+                        {
+                            HttpOnly = true,
+                            Expires = DateTimeOffset.UtcNow.AddMinutes(30),
+                            Secure = true,
+                            SameSite = SameSiteMode.Strict //ktra tính tương thích của trình duyệt
+                        };
+
+                        Response.Cookies.Append("CouponTitle", couponTitle, cookieOptions);
+                        return Ok(new { success = true, message = "Coupon applied successfully! " });
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error adding apply coupon cookie: {ex.Message}");
+                        return Ok(new { success = false, message = "Coupon applied failed" });
+                    }
+                }
+                else
+                {
+                    return Ok(new { success = false, message = "Coupon has expired" });
+                }
+            }
+            else
+            {
+                return Ok(new { success = false, message = "Coupon not existed" });
+            }
+
+            return Json(new { CouponTitle = couponTitle });
         }
     }
 }

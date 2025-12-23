@@ -26,13 +26,17 @@ namespace ShoesShop.Areas.Admin.Controllers
         public async Task<IActionResult> ViewOrder(string ordercode)
         {
             var orderDetails = await _dataContext.OrderDetails
-                .Include(od => od.Product)
-                .Where(od => od.OrderCode == ordercode)
-                .ToListAsync();
+         .Include(od => od.Product)
+         .Where(od => od.OrderCode == ordercode)
+         .ToListAsync();
 
             var order = await _dataContext.Orders.FirstOrDefaultAsync(o => o.OrderCode == ordercode);
 
-            ViewBag.CurrentStatus = order?.Status ?? 1; 
+            if (order == null) return NotFound();
+
+            ViewBag.ShippingCost = order.ShippingCost;
+            ViewBag.CurrentStatus = order.Status;
+
 
             return View(orderDetails);
         }
