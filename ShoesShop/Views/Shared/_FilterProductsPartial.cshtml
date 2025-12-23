@@ -1,0 +1,29 @@
+﻿@{
+	var currentUrl = Url.ActionContext.HttpContext.Request.Path;
+}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+			<h5>Order by follow:</h5>
+			<select class="form-control" id="sort_by">
+				<option>--------------</option>
+				<option value="@currentUrl?sort_by=price_increase">Price increasing</option>
+				<option value="@currentUrl?sort_by=price_decrease">Price price_decrease</option>
+				<option value="@currentUrl?sort_by=price_newest">New product</option>
+				<option value="@currentUrl?sort_by=price_oldest">Old product</option>
+			</select>
+		</div>
+		<div class="col-md-5">
+			<h5>Filter by price:</h5>
+			<form asp-action="Index" asp-controller="Category">
+				<p>Range: <input type="text" id="amount" readonly="" style="border:0;color:#f6931f; font-weight:bold;" /></p>
+				
+				<div id="slider-range"></div> <br/>
+				<button type="submit" name="locgia" data-current_url="@currentUrl" class="btn btn-danger btn-locgia">Filter</button>
+				
+			</form>
+		</div>
+
+	</div>
+</div>

@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using Newtonsoft.Json;
 
 namespace ShoesShop.Controllers
 {
@@ -23,6 +24,19 @@ namespace ShoesShop.Controllers
                 var orderCode = Guid.NewGuid().ToString();
                 var orderItem = new OrderModel();
                 orderItem.OrderCode = orderCode;
+
+                var shippingPriceCookie = Request.Cookies["ShippingPrice"];
+                decimal shippingPrice = 0;
+
+                var coupon_code = Request.Cookies["CouponTitle"];
+
+                if (shippingPriceCookie != null)
+                {
+                    var shippingPriceJson = shippingPriceCookie;
+                    shippingPrice = JsonConvert.DeserializeObject<decimal>(shippingPriceJson);
+                }
+                orderItem.ShippingCost = shippingPrice;
+                orderItem.CouponCode = coupon_code; 
                 orderItem.UserName = userEmail;
                 orderItem.Status = 1;
                 orderItem.CreateDate = DateTime.Now;
@@ -58,7 +72,7 @@ namespace ShoesShop.Controllers
 
                 TempData["success"] = "Checkout successfully, please wait for order approval";
 
-                return RedirectToAction("Index", "Cart");
+                return RedirectToAction("History", "Account");
             }
         }
     }

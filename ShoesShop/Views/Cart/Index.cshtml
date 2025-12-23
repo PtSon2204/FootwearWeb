@@ -1,79 +1,371 @@
 ﻿@using ShoesShop.Models.ViewModels
 @model CartItemViewModel
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<h4>Cart Page</h4>
-@{
-}
+
+<style>
+	/* Tổng thể và Tiêu đề */
+	#cart_items {
+	padding: 40px 0;
+	background: #f9f9f9;
+	}
+
+	.cart-title {
+	font-weight: 700;
+	margin-bottom: 30px;
+	color: #333;
+	text-transform: uppercase;
+	}
+
+	/* Bảng sản phẩm */
+	.cart_info {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+	padding: 20px;
+	margin-bottom: 20px;
+	border: none;
+	}
+
+	.cart_menu {
+	background: #FE980F;
+	color: #fff;
+	border-radius: 8px 8px 0 0;
+	}
+
+	.cart_menu td {
+	font-weight: 600;
+	padding: 15px !important;
+	border: none !important;
+	}
+
+	/* Hình ảnh và Nội dung */
+	.cart_product img {
+	border-radius: 8px;
+	border: 1px solid #eee;
+	transition: 0.3s;
+	}
+
+	.cart_product img:hover {
+	transform: scale(1.05);
+	}
+
+	.cart_description h4 a {
+	color: #333;
+	font-weight: 600;
+	font-size: 16px;
+	}
+
+	/* Nút tăng giảm số lượng */
+	.quantity_box {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	}
+
+	.quantity_box .btn {
+	padding: 2px 10px;
+	font-weight: bold;
+	}
+
+	.cart_quantity_input {
+	width: 45px;
+	text-align: center;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	height: 30px;
+	}
+
+	/* Khu vực tính tiền & Vận chuyển (Sidebar) */
+	.sidebar_item {
+	background: #fff;
+	padding: 25px;
+	border-radius: 12px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+	position: sticky;
+	top: 20px;
+	}
+
+	.sidebar_title {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	border-bottom: 2px solid #FE980F;
+	padding-bottom: 10px;
+	}
+
+	.css_select {
+	width: 100%;
+	height: 42px;
+	border-radius: 6px;
+	border: 1px solid #ddd;
+	margin-bottom: 15px;
+	padding: 0 10px;
+	outline: none;
+	transition: 0.3s;
+	}
+
+	.css_select:focus {
+	border-color: #FE980F;
+	box-shadow: 0 0 5px rgba(254, 152, 15, 0.2);
+	}
+
+	.btn-add-shipping {
+	background: #333;
+	color: white;
+	border: none;
+	width: 100%;
+	padding: 10px;
+	border-radius: 6px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	}
+
+	.btn-add-shipping:hover {
+	background: #FE980F;
+	}
+
+	/* Tổng cộng tiền */
+	.total_area ul li {
+	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+	display: flex;
+	justify-content: space-between;
+	}
+
+	.total_area ul li:last-child {
+	border: none;
+	font-size: 20px;
+	color: #FE980F;
+	font-weight: 700;
+	}
+</style>
+
 <section id="cart_items">
 	<div class="container">
-		<div class="breadcrumbs">
-			<ol class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li class="active">Shopping Cart</li>
-			</ol>
-		</div>
-		<div class="table-responsive cart_info">
-			<table class="table table-condensed">
-				<thead>
-					<tr class="cart_menu">
-						<td class="description">Product Name</td>
-						<td class="image">Image</td>
-						<td class="price">Price</td>
-						<td class="quantity">Quantity</td>
-						<td class="total">Total</td>
-						<td></td>
-					</tr>
-				</thead>
-				<tbody>
-					@if (Model.Items.Count > 0)
-					{
-						@foreach (var item in Model.Items)
-						{
-							<tr>
-								<td class="cart_description">
-									<h4><a href="">@item.ProductName</a></h4>
-								</td>
-								<td class="cart_product">
-									<a href=""><img src="~/media/products/@item.Image" height="100"></a>
-								</td>
-								<td class="cart_price">
-									<p>@item.Price.ToString("#, ##0 VNĐ")</p>
-								</td>
-								<td class="cart_quantity">
+		<h2 class="cart-title">Giỏ hàng của bạn</h2>
 
-									<a class="btn btn-default btn-sm" asp-controller="Cart" asp-action="Increase" asp-route-id="@item.ProductId"> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="@item.Quantity" autocomplete="off" size="2">
-									<a class="btn btn-success btn-sm" asp-controller="Cart" asp-action="Decrease" asp-route-id="@item.ProductId"> - </a>
-									<a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="Remove" asp-route-id="@item.ProductId"> Remove</a>
-
-								</td>
-								<td class="cart_total">
-									<p class="cart_total_price">@Model.Items.Where(x => x.ProductId == item.ProductId).Sum(x => x.Quantity * x.Price).ToString()</p>
-								</td>
-								<td class="cart_delete">
-									<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-								</td>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="table-responsive cart_info">
+					<table class="table table-condensed">
+						<thead>
+							<tr class="cart_menu">
+								<td>Sản phẩm</td>
+								<td class="text-center">Giá</td>
+								<td class="text-center">Số lượng</td>
+								<td class="text-center">Tổng</td>
+								<td></td>
 							</tr>
-						}
-						<tr rowspan="5">
-							<td colspan="6">Grand Total:<p class="cart_total_price"> @Model.GrandTotal.ToString()</p></td>
-							<td><a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="Clear"> Clear</a></td>
-							@if(User.Identity?.IsAuthenticated ?? false)
+						</thead>
+						<tbody>
+							@if (Model.Items.Count > 0)
 							{
-								<td><a class="btn btn-primary btn-sm" asp-controller="Checkout" asp-action="Checkout"> Checkout</a></td>
+								@foreach (var item in Model.Items)
+								{
+									<tr>
+										<td class="cart_description">
+											<div style="display: flex; align-items: center; gap: 15px;">
+												<a href="" class="cart_product">
+													<img src="~/media/products/@item.Image" height="80">
+												</a>
+												<h4><a href="">@item.ProductName</a></h4>
+											</div>
+										</td>
+										<td class="text-center">@item.Price.ToString("#,##0") VNĐ</td>
+										<td class="text-center">
+											<div class="quantity_box">
+												<a class="btn btn-default btn-sm" asp-action="Decrease" asp-route-id="@item.ProductId"> - </a>
+												<input class="cart_quantity_input" type="text" value="@item.Quantity" readonly>
+												<a class="btn btn-default btn-sm" asp-action="Increase" asp-route-id="@item.ProductId"> + </a>
+											</div>
+										</td>
+										<td class="text-center" style="color: #FE980F; font-weight:600;">
+											@((item.Quantity * item.Price).ToString("#,##0")) VNĐ
+										</td>
+										<td class="text-center">
+											<a class="text-danger" asp-action="Remove" asp-route-id="@item.ProductId" title="Xóa">
+												<i class="fa fa-trash-o" style="font-size: 20px;"></i> Xóa
+											</a>
+										</td>
+									</tr>
+								}
 							}
-						</tr>
-					}
-					else
-					{
-						<tr>
-							<td colspan="5"><h4>Your cart is Empty.</h4></td>
-						</tr>
-					}
-				</tbody>
-			</table>
+							else
+							{
+								<tr><td colspan="5" class="text-center"><h4>Giỏ hàng trống!</h4></td></tr>
+							}
+						</tbody>
+					</table>
+				</div>
+				<a class="btn btn-danger btn-sm" asp-action="Clear"><i class="fa fa-times"></i> Xóa toàn bộ giỏ hàng</a>
+			</div>
+
+			<div class="col-md-4">
+				<div class="sidebar_item">
+					<h4 class="sidebar_title">Tính phí vận chuyển</h4>
+					<select class="css_select" id="tinh"><option value="0">Tỉnh / Thành phố</option></select>
+					<select class="css_select" id="quan"><option value="0">Quận / Huyện</option></select>
+					<select class="css_select" id="phuong"><option value="0">Phường / Xã</option></select>
+					<button type="button" class="btn-default btn-add-shipping">Shipping fee</button>
+
+					<h4 class="sidebar_title">Tổng đơn hàng</h4>
+					<div class="total_area">
+						<ul class="list-unstyled">
+							<li>Tạm tính: <span>@Model.GrandTotal.ToString("#,##0") VNĐ</span></li>
+							<li>Shipping cost: <span id="ship_cost">@Model.ShippingCost.ToString("#,##0") VNĐ</span></li>
+							<li>Grand total: <span>@Model.GrandTotal.ToString("#,##0") VNĐ</span></li>
+							<form>
+								Coupon Code: <input type="text" class="form-control coupon-value"/>
+								<span class="text text-success">@Model.CouponCode</span>
+								<input type="button" value="Apply" class="btn btn-sm btn-primary btn-apply-coupon"/>
+							</form>
+						</ul>
+						@if (User.Identity?.IsAuthenticated ?? false)
+						{
+							<div class="checkout-actions">
+								@if (Model.ShippingCost < 0)
+								{
+									<a disabled="disabled" class="btn btn-primary btn-block" style="background:#FE980F; border:none; padding:12px; font-weight:700;" asp-controller="Checkout" asp-action="Checkout">
+										Checkout
+									</a>
+									<span class="text text-danger">Request a shipping fee quote.</span>
+								}
+								else
+								{
+									<a class="btn btn-primary btn-block" onclick="return confirm('Are you sure checkout?')" style="background:#FE980F; border:none; padding:12px; font-weight:700;" asp-controller="Checkout" asp-action="Checkout">
+										Checkout
+									</a>
+									<a class="btn btn-default btn-block" style="margin-top: 10px; border: 1px solid #ccc;" asp-action="DeleteShipping" asp-controller="Cart">
+										<i class="fa fa-refresh"></i> Delete shipping
+									</a>
+								}
+							</div>
+						}
+						else
+						{
+							<p class="text-danger">Vui lòng đăng nhập để thanh toán.</p>
+						}
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section> <!--/#cart_items-->
+@section Scripts {
+	<script>
+		$(".btn-apply-coupon").click(function() {
+			var coupon_value = $(".coupon-value").val();
+			$.ajax({
+				type: "POST",
+				url:"@Url.Action("GetCoupon", "Cart")",
+				data: { coupon_value: coupon_value },
+				success: function (result) {
+					if (result.success) {
+						Swal.fire(result.message);
+						location.reload();
+					}
+					else {
+						Swal.fire(result.message);
+					}
+				}
+			});
+		});
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const tinhSelect = document.getElementById("tinh");
+			const quanSelect = document.getElementById("quan");
+			const phuongSelect = document.getElementById("phuong");
+			const btnShipping = document.querySelector(".btn-add-shipping");
+
+			// 1. Lấy Tỉnh
+			fetch('https://esgoo.net/api-tinhthanh/1/0.htm')
+				.then(res => res.json())
+				.then(data => {
+					if (data.error === 0) {
+						data.data.forEach(val => {
+							tinhSelect.add(new Option(val.full_name, val.id));
+						});
+					}
+				})
+				.catch(err => console.error("Lỗi lấy tỉnh thành:", err));
+
+			// 2. Lấy Quận
+			tinhSelect.addEventListener("change", function () {
+				quanSelect.innerHTML = '<option value="0">Quận / Huyện</option>';
+				phuongSelect.innerHTML = '<option value="0">Phường / Xã</option>';
+				if (this.value !== "0") {
+					fetch(`https://esgoo.net/api-tinhthanh/2/${this.value}.htm`)
+						.then(res => res.json())
+						.then(data => {
+							if (data.error === 0) {
+								data.data.forEach(val => quanSelect.add(new Option(val.full_name, val.id)));
+							}
+						});
+				}
+			});
+
+			// 3. Lấy Phường
+			quanSelect.addEventListener("change", function () {
+				phuongSelect.innerHTML = '<option value="0">Phường / Xã</option>';
+				if (this.value !== "0") {
+					fetch(`https://esgoo.net/api-tinhthanh/3/${this.value}.htm`)
+						.then(res => res.json())
+						.then(data => {
+							if (data.error === 0) {
+								data.data.forEach(val => phuongSelect.add(new Option(val.full_name, val.id)));
+							}
+						});
+				}
+			});
+
+			// 4. Gửi dữ liệu về Controller
+			if (btnShipping) {
+				btnShipping.addEventListener("click", function (e) {
+					e.preventDefault();
+
+					if (tinhSelect.value === "0" || quanSelect.value === "0") {
+						alert("Vui lòng chọn đầy đủ địa chỉ!");
+						return;
+					}
+
+					let tinh = tinhSelect.options[tinhSelect.selectedIndex].text;
+					let quan = quanSelect.options[quanSelect.selectedIndex].text;
+					let phuong = phuongSelect.options[phuongSelect.selectedIndex].text;
+
+					const params = new URLSearchParams();
+					params.append('provinces', tinh);
+					params.append('districts', quan);
+					params.append('communues', phuong);
+
+					fetch("@Url.Action("GetShipping", "Cart")", {
+						method: "POST",
+						headers: { "Content-Type": "application/x-www-form-urlencoded" },
+						body: params
+					})
+					.then(res => res.json())
+							.then(data => {
+			console.log("Kết quả:", data);
+
+			// 1. Tìm thẻ hiển thị phí vận chuyển và cập nhật giá trị
+			const shipCostElement = document.getElementById("ship_cost");
+			if (shipCostElement) {
+				shipCostElement.innerHTML = data.shippingPrice.toLocaleString('vi-VN') + " VNĐ";
+			}
+
+			// 2. Tính lại tổng cộng (GrandTotal cũ + Phí ship mới)
+			// Lưu ý: Bạn cần lấy giá trị GrandTotal từ Model truyền xuống
+			const totalElement = document.querySelector(".total_area ul li:last-child span");
+			if (totalElement) {
+				let subTotal = parseInt("@Model.GrandTotal"); // Lấy giá gốc từ C#
+				let finalTotal = subTotal + data.shippingPrice;
+				totalElement.innerHTML = finalTotal.toLocaleString('vi-VN') + " VNĐ";
+			}
+
+			alert("Đã cập nhật phí vận chuyển!");
+		});
+				});
+			}
+		}); // Kết thúc DOMContentLoaded
+	</script>
+}
