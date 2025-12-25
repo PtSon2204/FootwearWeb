@@ -40,3 +40,6 @@ Publish/
 # OS files
 Thumbs.db
 .DS_Store
+
+# Các file nhạy cảm cá nhân
+secrets.json

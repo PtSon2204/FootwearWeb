@@ -1422,6 +1422,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\logoContact\17ea7b79-d6fc-4e4e-8303-b84d8b8b2799_360_F_908560397_HTk6hkRQQzUCGDRnf1MHfiX3q0IJyjAD.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ShoesShop</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ShoesShop</BasePath>
+      <RelativePath>media/logoContact/17ea7b79-d6fc-4e4e-8303-b84d8b8b2799_360_F_908560397_HTk6hkRQQzUCGDRnf1MHfiX3q0IJyjAD.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>l24kqmx1gq</Fingerprint>
+      <Integrity>Y+xFG7/v+oPNJh7jh2NnvVG0FeRzPyVjoWIzEYyfpjg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\logoContact\17ea7b79-d6fc-4e4e-8303-b84d8b8b2799_360_F_908560397_HTk6hkRQQzUCGDRnf1MHfiX3q0IJyjAD.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\logoContact\4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png'))">
       <SourceType>Package</SourceType>
       <SourceId>ShoesShop</SourceId>
@@ -1439,24 +1457,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\logoContact\4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\logoContact\f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>ShoesShop</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/ShoesShop</BasePath>
-      <RelativePath>media/logoContact/f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ud2dbze5in</Fingerprint>
-      <Integrity>UsTfASrEl7A0VJIUTaIQQHnoVBoIjEkGE1vZ4hJ3C78=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\logoContact\f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\products\0cc5e0a5-8a2e-40c5-8489-0b2ec6f3cd03_Mlb1.jpg'))">
       <SourceType>Package</SourceType>
@@ -1799,24 +1799,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\sliders\c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍🏻🖥 shoes concept webdesigner….jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\sliders\f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>ShoesShop</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/ShoesShop</BasePath>
-      <RelativePath>media/sliders/f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>7hl87urn6g</Fingerprint>
-      <Integrity>RdLC6sNSj7CevBhSfUm+RuLczIYjOB44ZD+mKB88jmQ=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\media\sliders\f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ShoesShop.tsr1muhavt.bundle.scp.css'))">
       <SourceType>Package</SourceType>

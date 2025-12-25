@@ -307,3 +307,4 @@ D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\obj\Debug\net8.0\ShoesSh
 D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\obj\Debug\net8.0\ShoesShop.genruntimeconfig.cache
 D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\obj\Debug\net8.0\ref\ShoesShop.dll
 D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\obj\Debug\net8.0\ShoesShop.sourcelink.json
+D:\Semester 7\MyFirstProject\ShoesShopProject\ShoesShop\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

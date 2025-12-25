@@ -53,6 +53,51 @@ namespace ShoesShop.Areas.Admin.Controllers
             }
 
             order.Status = status;
+            if (status == 3)
+            {
+                var detailOrders = await _dataContext.OrderDetails.Include(od => od.Product).Where(od => od.OrderCode == order.OrderCode).Select(od => new
+                {
+                    od.Quantity,
+                    od.Product.Price,
+                    od.Product.CapitalPrice
+                }).ToListAsync();
+
+                var statisticModel = await _dataContext.Statistical.FirstOrDefaultAsync(s => s.DateCreated.Date == order.CreateDate.Date);
+
+                if (statisticModel != null)
+                {
+                    foreach (var orderDetail in detailOrders)
+                    {
+                        statisticModel.Quantity += 1;
+                        statisticModel.Sold += orderDetail.Quantity;
+                        statisticModel.Revenue += orderDetail.Quantity * orderDetail.Price;
+                        statisticModel.Profit += orderDetail.Price - orderDetail.CapitalPrice;
+                    }
+                    _dataContext.Update(statisticModel);
+                }
+                else
+                {
+                    int new_quantity = 0;
+                    int new_sold = 0;
+                    decimal new_profit = 0;
+                    foreach (var orderDetail in detailOrders)
+                    {
+                        new_quantity += 1;
+                        new_sold += orderDetail.Quantity;
+                        new_profit += orderDetail.Price - orderDetail.CapitalPrice;
+
+                        statisticModel = new StatisticalModel
+                        {
+                            DateCreated = order.CreateDate,
+                            Quantity = new_quantity,
+                            Sold = new_sold,
+                            Revenue = orderDetail.Quantity * orderDetail.Price,
+                            Profit = new_profit
+                        };
+                    }
+                    _dataContext.Update(statisticModel);
+                }
+            }
             try
             {
                 await _dataContext.SaveChangesAsync();

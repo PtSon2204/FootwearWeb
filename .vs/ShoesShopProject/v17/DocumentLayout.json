@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\views\\account\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\views\\account\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\areas\\admin\\views\\brand\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\areas\\admin\\views\\brand\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\areas\\admin\\views\\brand\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\areas\\admin\\views\\brand\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\views\\account\\newpass.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\views\\account\\newpass.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|d:\\semester 7\\myfirstproject\\shoesshopproject\\shoesshop\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4673FE6-4D73-4DAF-8FA3-388970197104}|ShoesShop\\ShoesShop.csproj|solutionrelative:shoesshop\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 208,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,42 +46,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "History.cshtml",
-              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Views\\Account\\History.cshtml",
-              "RelativeDocumentMoniker": "ShoesShop\\Views\\Account\\History.cshtml",
-              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Views\\Account\\History.cshtml",
-              "RelativeToolTip": "ShoesShop\\Views\\Account\\History.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-23T09:41:12.794Z",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Program.cs",
+              "RelativeDocumentMoniker": "ShoesShop\\Program.cs",
+              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Program.cs",
+              "RelativeToolTip": "ShoesShop\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T05:27:53.487Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Views\\Brand\\Index.cshtml",
-              "RelativeDocumentMoniker": "ShoesShop\\Areas\\Admin\\Views\\Brand\\Index.cshtml",
-              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Views\\Brand\\Index.cshtml",
-              "RelativeToolTip": "ShoesShop\\Areas\\Admin\\Views\\Brand\\Index.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-23T09:40:48.861Z",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\appsettings.json",
+              "RelativeDocumentMoniker": "ShoesShop\\appsettings.json",
+              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\appsettings.json",
+              "RelativeToolTip": "ShoesShop\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-25T05:24:48.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Views\\Brand\\Edit.cshtml",
-              "RelativeDocumentMoniker": "ShoesShop\\Areas\\Admin\\Views\\Brand\\Edit.cshtml",
-              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Areas\\Admin\\Views\\Brand\\Edit.cshtml",
-              "RelativeToolTip": "ShoesShop\\Areas\\Admin\\Views\\Brand\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-23T09:40:46.379Z",
-              "EditorCaption": ""
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "ShoesShop\\Controllers\\PaymentController.cs",
+              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "ShoesShop\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T05:24:32.188Z"
             },
             {
               "$type": "Document",
@@ -103,49 +90,9 @@
               "RelativeDocumentMoniker": "ShoesShop\\Views\\Cart\\Index.cshtml",
               "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Views\\Cart\\Index.cshtml",
               "RelativeToolTip": "ShoesShop\\Views\\Cart\\Index.cshtml",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAjwOMAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAANYAAAAAAAAAAAAWwOMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-23T09:38:56.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "ShoesShop\\Views\\Account\\Login.cshtml",
-              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "ShoesShop\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-23T08:59:05.404Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "ShoesShop\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "ShoesShop\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAUwGEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-23T08:41:22.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NewPass.cshtml",
-              "DocumentMoniker": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Views\\Account\\NewPass.cshtml",
-              "RelativeDocumentMoniker": "ShoesShop\\Views\\Account\\NewPass.cshtml",
-              "ToolTip": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\Views\\Account\\NewPass.cshtml",
-              "RelativeToolTip": "ShoesShop\\Views\\Account\\NewPass.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-23T08:41:13.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-25T05:20:39.62Z"
             }
           ]
         }

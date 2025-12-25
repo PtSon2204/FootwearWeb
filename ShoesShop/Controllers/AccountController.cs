@@ -1,5 +1,8 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ShoesShop.Models.ViewModels;
@@ -47,6 +50,109 @@ namespace ShoesShop.Controllers
             }
             return View(loginVm);
         }
+        public async Task LoginByGoogle()
+        {
+            await HttpContext.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
+                new AuthenticationProperties
+                {
+                    RedirectUri = Url.Action("GoogleResponse")
+                });
+        }
+        public async Task<IActionResult> GoogleResponse()
+        {
+            var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            if (!result.Succeeded)
+            {
+                return RedirectToAction("Login");
+            }
+            var claims = result.Principal.Identities.FirstOrDefault().Claims.Select(claim => new
+            {
+                claim.Issuer,
+                claim.OriginalIssuer,
+                claim.Type,
+                claim.Value
+            });
+            //TempData["success"] = "Login successfully!";
+            //return RedirectToAction("Index", "Home");
+            //return Json(claims);
+            var email = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+
+            string emailName = email.Split('@')[0];
+
+            var existingUser = await _userManage.FindByEmailAsync(email);
+            if (existingUser == null)
+            {
+                var passwordHasher = new PasswordHasher<AppUserModel>();
+                var hashedPassword = passwordHasher.HashPassword(null, "123456789");
+
+                var newUser = new AppUserModel { UserName = emailName, Email = email };
+                newUser.PasswordHash = hashedPassword;
+
+                var createUserResult = await _userManage.CreateAsync(newUser);
+                if (!createUserResult.Succeeded) 
+                {
+                    TempData["error"] = "Sign in fail. Please try again!";
+                    return RedirectToAction("Login", "Account");
+                }
+                else
+                {
+                    await _signInManager.SignInAsync(newUser, isPersistent: false);
+                    TempData["success"] = "Sign in successfully!";
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                await _signInManager.SignInAsync(existingUser, isPersistent: false);
+            }
+            return RedirectToAction("Login", "Account");
+
+        }
+
+        public async Task<IActionResult> UpdateAccount()
+        {
+            if ((bool)!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userEmail = User.FindFirstValue(ClaimTypes.Email);
+
+            var user = await _userManage.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateInfoAccount(AppUserModel appUser)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var userInDb = await _userManage.FindByIdAsync(userId);
+
+            if (userInDb == null)
+            {
+                return NotFound();
+            }
+
+            userInDb.PhoneNumber = appUser.PhoneNumber;
+            var result = await _userManage.UpdateAsync(userInDb);
+
+            if (result.Succeeded)
+            {
+                TempData["success"] = "Update successfully!";
+            }
+            else
+            {
+                TempData["error"] = "Update failed!";
+            }
+
+            return RedirectToAction("UpdateAccount", "Account");
+        }
+
 
         public async Task<IActionResult> NewPass(string email, string token) 
         {
@@ -192,7 +298,8 @@ namespace ShoesShop.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync(); //thoát
+            await HttpContext.SignOutAsync(); //thoát đăng nhập bằng tài khoản google
+            await _signInManager.SignOutAsync(); //thoát đăng nhập bằng tài khoản thường
             return RedirectToAction("Index", "Home");
         }
 

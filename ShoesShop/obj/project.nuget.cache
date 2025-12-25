@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "KcVpLA+/c8Q=",
+  "dgSpecHash": "Kqj4UkFHogE=",
   "success": true,
   "projectFilePath": "D:\\Semester 7\\MyFirstProject\\ShoesShopProject\\ShoesShop\\ShoesShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ptson\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ptson\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\ptson\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\ptson\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\8.0.16\\microsoft.aspnetcore.authentication.google.8.0.16.nupkg.sha512",
     "C:\\Users\\ptson\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.16\\microsoft.aspnetcore.cryptography.internal.8.0.16.nupkg.sha512",
     "C:\\Users\\ptson\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.16\\microsoft.aspnetcore.cryptography.keyderivation.8.0.16.nupkg.sha512",
     "C:\\Users\\ptson\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\8.0.16\\microsoft.aspnetcore.identity.entityframeworkcore.8.0.16.nupkg.sha512",

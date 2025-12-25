@@ -1,0 +1,110 @@
+﻿@model StatisticalModel
+@{
+	ViewData["title"] = "Dashboard";
+}
+<h1>Dashboard Statistic</h1>
+
+<div class="row">
+	<div class="col-md-3">
+		<p>Product Statistic: @ViewBag.CountProduct</p>
+	</div>
+	<div class="col-md-3">
+		<p>Order Statistic: @ViewBag.CountOrder</p>
+	</div>
+		<div class="col-md-3">
+		<p>Category Statistic: @ViewBag.CountCategory</p>
+	</div>
+	<div class="col-md-3">
+		<p>User Statistic: @ViewBag.CountUser</p>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<select class="filter-select">
+					<option value="30">--- Filter data ---</option>
+					<option value="7">7 days ago</option>
+					<option value="30">1 months ago</option>
+					<option value="90">3 months ago</option>
+					<option value="365">1 years ago</option>
+				</select>
+			</div>
+            <div class="col-md-3">
+                <h4>Choose:</h4>
+                <label>From date:</label>
+                <input type="date" class="form-control" id="date_from" asp-for="@Model.DateCreated"/>
+                <label>To date:</label>
+                <input type="date" class="form-control" id="date_to" asp-for="@Model.DateCreated" />
+                <button id="filterButton" class="btn btn-warning">Filter</button>
+            </div>
+		</div>
+	</div>
+	<div class="row">
+		<p>Thống kê biểu đồ</p>
+		<div id="myfirstchart" style="height: 250px;">
+
+		</div>
+	</div>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var chartMorris = new Morris.Line({
+                element: 'myfirstchart',
+                data: [],
+                xkey: 'date',
+                ykeys: ['sold', 'quantity', 'revenue', 'profit'],
+                labels: ["Số lượng bán ra", "Đơn hàng", "Doanh thu", "Lợi nhuận"],
+                hideHover: 'auto',
+                parseTime: false
+            });
+
+            function loadChartData(url, params = {}) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: params,
+                    success: function(data) {
+                        if (data && data.length > 0) {
+                            chartMorris.setData(data);
+                        } else {
+                            chartMorris.setData([]);
+                            console.warn("Không có dữ liệu");
+                        }
+                    },
+                    error: function(error) {
+                        console.error("Lỗi: ", error);
+                    }
+                });
+            }
+
+            loadChartData("@Url.Action("GetChartData", "Dashboard")");
+
+            $('.filter-select').on('change', function() {
+                var days = $(this).val();
+                var endDate = new Date();
+                var startDate = new Date();
+                startDate.setDate(endDate.getDate() - parseInt(days));
+
+                loadChartData("@Url.Action("GetChartDataBySelect", "Dashboard")", {
+                    startDate: startDate.toISOString().split('T')[0],
+                    endDate: endDate.toISOString().split('T')[0]
+                });
+            });
+
+            $('#filterButton').click(function() {
+                var fromDate = $('#date_from').val();
+                var toDate = $('#date_to').val();
+
+                if(!fromDate || !toDate) {
+                    alert("Vui lòng chọn đầy đủ ngày bắt đầu và ngày kết thúc");
+                    return;
+                }
+
+                loadChartData("@Url.Action("FilterData", "Dashboard")", {
+                    fromDate: fromDate,
+                    toDate: toDate
+                });
+            });
+        }); 
+    </script>
+}
