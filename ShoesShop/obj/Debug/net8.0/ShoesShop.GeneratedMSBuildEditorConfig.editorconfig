@@ -64,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Semester 7/MyFirstProject/ShoesShopProject/ShoesShop/Areas/Admin/Views/Order/PaymentMomoInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcUGF5bWVudE1vbW9JbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Semester 7/MyFirstProject/ShoesShopProject/ShoesShop/Areas/Admin/Views/Order/ViewOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcVmlld09yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -188,8 +192,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Semester 7/MyFirstProject/ShoesShopProject/ShoesShop/Views/Checkout/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
+[D:/Semester 7/MyFirstProject/ShoesShopProject/ShoesShop/Views/Checkout/PaymentCallBack.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcUGF5bWVudENhbGxCYWNrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Semester 7/MyFirstProject/ShoesShopProject/ShoesShop/Views/Home/Compare.cshtml]

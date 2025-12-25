@@ -1,5 +1,7 @@
 ﻿using System.Security.Claims;
 using Newtonsoft.Json;
+using ShoesShop.Migrations;
+using ShoesShop.Services;
 
 namespace ShoesShop.Controllers
 {
@@ -7,12 +9,15 @@ namespace ShoesShop.Controllers
     {
         private readonly DataContext _dataContext;
         private readonly IEmailSender _emailSender;
-        public CheckoutController(IEmailSender emailSender, DataContext dataContext)
+        private readonly IMomoService _momoService;
+        public CheckoutController(IEmailSender emailSender, DataContext dataContext, IMomoService momoService)
         {
             _dataContext = dataContext;
             _emailSender = emailSender;
+            _momoService = momoService;
         }
-        public async Task<IActionResult> Checkout()
+        [HttpGet]
+        public async Task<IActionResult> Checkout(string OrderId)
         {
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
             if (userEmail == null)
@@ -38,7 +43,15 @@ namespace ShoesShop.Controllers
                 orderItem.ShippingCost = shippingPrice;
                 orderItem.CouponCode = coupon_code; 
                 orderItem.UserName = userEmail;
-                orderItem.Status = 1;
+                if (OrderId != null)
+                {
+                    orderItem.PaymentMethod = OrderId;
+                }
+                else
+                {
+                    orderItem.PaymentMethod = "COD";
+                }
+                    orderItem.Status = 1;
                 orderItem.CreateDate = DateTime.Now;
                 _dataContext.Orders.Add(orderItem);
                 _dataContext.SaveChanges();
@@ -74,6 +87,35 @@ namespace ShoesShop.Controllers
 
                 return RedirectToAction("History", "Account");
             }
+        }
+
+        public async Task<IActionResult> PaymentCallBack(Models.MomoInfoModel model)
+        {
+            var response = _momoService.PaymentExecuteAsync(HttpContext.Request.Query);
+            var requestQuery = HttpContext.Request.Query;
+
+            if (requestQuery["resultCode"] == 0)
+            {
+                var newMomoInsert = new Models.Momo.MomoInfoModel
+                {
+                    OrderId = requestQuery["orderId"],
+                    FullName = User.FindFirstValue(ClaimTypes.Email),
+                    Amount = decimal.Parse(requestQuery["Amount"]),
+                    OrderInfo = requestQuery["orderInfo"],
+                    DatePaid = DateTime.Now
+                };
+                _dataContext.Add(newMomoInsert);
+                await _dataContext.SaveChangesAsync();
+
+                await Checkout(requestQuery["orderId"]); 
+            }
+            else
+            {
+                TempData["success"] = "Cancel transaction with Momo";
+                return RedirectToAction("Index", "Cart");
+            }
+
+                return View(response);
         }
     }
 }

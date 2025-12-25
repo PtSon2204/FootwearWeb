@@ -12,6 +12,7 @@
 			<th>Username</th>
 			<th>Order Date</th>
 			<th>Order Status</th>
+			<th>Payment Method</th>
 			<th>Shipping Cost</th>
 			<th>Coupon</th>
 			<th scope="col">Action</th>
@@ -56,6 +57,16 @@
 						}
 					}
 					<span class="text @statusClass">@statusText</span>
+				</td>
+				<td>
+					@if (item.PaymentMethod == "COD" || item.PaymentMethod == null)
+					{
+						<span class="text text-primary">@item.PaymentMethod</span>
+					}
+					else
+					{
+						<span class="text text-danger">By Momo @item.PaymentMethod <a asp-action="PaymentMomoInfo" asp-route-orderId="@item.PaymentMethod" asp-controller="Order"></a></span>
+					}
 				</td>
 				<td>@item.ShippingCost.ToString("#,##0")VNĐ</td>
 				<td>

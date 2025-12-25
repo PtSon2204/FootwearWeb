@@ -235,7 +235,10 @@
 										Checkout
 									</a>
 									<form asp-action="CreatePaymentUrl" asp-controller="Payment">
-										<button class="btn btn-danger btn-block" style="margin-top: 10px; border: 1px solid #ccc;" type="submit">Pay with MoMo</button>
+										<input type="hidden" name="Amount" value="@Model.GrandTotal"/>
+										<input type="hidden" name="OrderInfo" value="Payment Momo for order at ShoesShop"/>
+										<input type="hidden" name="FullName" value="@User.Identity.Name" />
+										<button class="btn btn-danger btn-block" name="PayUrl" style="margin-top: 10px; border: 1px solid #ccc;" type="submit">Pay with MoMo</button>
 									</form>
 									<a class="btn btn-default btn-block" style="margin-top: 10px; border: 1px solid #ccc;" asp-action="DeleteShipping" asp-controller="Cart">
 										<i class="fa fa-refresh"></i> Delete shipping

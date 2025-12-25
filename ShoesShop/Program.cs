@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
 using ShoesShop.Areas.Admin.Repository;
+using ShoesShop.Models.Momo;
+using ShoesShop.Services;
 
 namespace ShoesShop
 {
@@ -32,6 +34,11 @@ namespace ShoesShop
                 options.Cookie.IsEssential = true;
             });
 
+            //Connect MoMoAPI
+            builder.Services.Configure<MomoOptionModel>(builder.Configuration.GetSection("MomoAPI"));
+            builder.Services.AddScoped<IMomoService, MomoService>();
+
+            //Identity
             builder.Services.AddIdentity<AppUserModel, IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();
 
