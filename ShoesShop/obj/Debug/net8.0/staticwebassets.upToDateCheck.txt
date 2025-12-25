@@ -77,8 +77,8 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\media\logoContact\17ea7b79-d6fc-4e4e-8303-b84d8b8b2799_360_F_908560397_HTk6hkRQQzUCGDRnf1MHfiX3q0IJyjAD.jpg
 wwwroot\media\logoContact\4108a6c9-374a-4ef8-8d97-7479d92681be_Screenshot 2025-10-12 161009.png
-wwwroot\media\logoContact\f690452d-2d4f-4697-9f6f-e5b70129d7eb_Screenshot 2025-10-12 161009.png
 wwwroot\media\products\0cc5e0a5-8a2e-40c5-8489-0b2ec6f3cd03_Mlb1.jpg
 wwwroot\media\products\31b576e1-63b9-4089-8877-00cf56651a8c_13.png
 wwwroot\media\products\59af7a4c-49e3-450e-a28b-f1eda67cdd7a_dep_nike1.png
@@ -98,4 +98,3 @@ wwwroot\media\products\Mlb1.jpg
 wwwroot\media\sliders\10e0db3e-0ab8-47ab-8a2c-d7085ca247a8_6740080.jpg
 wwwroot\media\sliders\ae2a23c3-9543-4a78-aba6-359f6819742c_p-452-banner-02.jpg
 wwwroot\media\sliders\c508294e-4f09-4a3e-aeb0-4d2f955486ab_Design landing page✍🏻🖥 shoes concept webdesigner….jpg
-wwwroot\media\sliders\f5284801-0c5a-4b83-a148-63973de3d5b6_Sneakers - Landing Page.jpg

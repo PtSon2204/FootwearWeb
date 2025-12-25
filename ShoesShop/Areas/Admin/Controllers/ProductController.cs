@@ -147,6 +147,7 @@ namespace ShoesShop.Areas.Admin.Controllers
                 existed_product.Name = product.Name;
                 existed_product.Description = product.Description;
                 existed_product.Price = product.Price;
+                existed_product.CapitalPrice = product.CapitalPrice;
                 existed_product.CategoryId = product.CategoryId;
                 existed_product.BrandId = product.BrandId;
 

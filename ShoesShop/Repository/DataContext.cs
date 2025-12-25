@@ -24,5 +24,6 @@ namespace ShoesShop.Repository
         public DbSet<ProductQuantityModel> ProductsQuantities { get; set; }
         public DbSet<ShipModel> Ships { get; set; }
         public DbSet<CouponModel> Coupons { get; set; }
+        public DbSet<StatisticalModel> Statistical { get; set; }
     }
 }

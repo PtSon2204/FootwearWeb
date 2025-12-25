@@ -92,12 +92,20 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 
-								@if(User.Identity?.IsAuthenticated ?? false)
+								@if (User.Identity?.IsAuthenticated ?? false)
 								{
 									<li><a asp-action="Index" asp-controller="Cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 
-									<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-									<li><a asp-action="History" asp-controller="Account">><i class="fa fa-user"></i> Account</a></li>
+									<li><a asp-action="Index" asp-controller="Cart"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+									<li class="dropdown">
+										<a style="cursor:pointer" data-toggle="dropdown">
+											<i class="fa fa-user"> Account<span class="caret"></span></i>
+										</a>
+										<ul class="dropdown-menu">
+											<li><a asp-action="History" asp-controller="Account">History Orders</a></li>
+											<li><a asp-action="UpdateAccount" asp-controller="Account">Update Account Information</a></li>
+										</ul>
+									</li>
 									<li><a asp-action="Wishlist" asp-controller="Home"><i class="fa fa-heart"></i> Wishlist</a></li>
 									<li><a asp-action="Compare" asp-controller="Home"><i class="fa fa-star"></i> Compare</a></li>
 									if (User.IsInRole("admin"))
@@ -105,7 +113,7 @@
 										<li><a asp-area="Admin" asp-controller="Product" asp-action="Index">Admin Panel</a></li>
 									}
 									<li><a asp-controller="Account" asp-action="Logout"><i class="fa fa-lock"></i>@User.Identity.Name, Logout</a></li>
-								} 
+								}
 								else
 								{
 									<li><a asp-controller="Account" asp-action="Login"><i class="fa fa-lock"></i>Login</a></li>
@@ -151,7 +159,7 @@
 					<div class="col-sm-3">
 						<form asp-controller="Product" asp-action="Search" method="post">
 							<div class="search_box pull-right">
-								<input type="text" placeholder="Search" name="searchTerm"/>
+								<input type="text" placeholder="Search" name="searchTerm" />
 								<button class="btn btn-warning" type="submit">Search</button>
 							</div>
 						</form>
@@ -160,7 +168,6 @@
 			</div>
 		</div><!--/header-bottom-->
 	</header><!--/header-->
-
 	<!--Slider ở đây-->
 
 	<section>
@@ -177,7 +184,7 @@
 		<!--Footer-->
 		<partial name="_FooterPartial" />
 
-	@*	<div class="footer-widget">
+		@*	<div class="footer-widget">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-2">
