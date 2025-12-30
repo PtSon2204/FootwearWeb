@@ -108,5 +108,29 @@ namespace ShoesShop.Areas.Admin.Controllers
                 return StatusCode(500, new { success = false, message = "An error occurred while updating the order status." });
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> PaymentMomoInfo(string orderId)
+        {
+            var momoInfo = await _dataContext.MomoInfoModel.FirstOrDefaultAsync(m => m.OrderId == orderId);
+
+            if (momoInfo == null)
+            {
+                return NotFound();
+            }
+            return View(momoInfo);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> PaymentVnpayInfo(string orderId)
+        {
+            var vnPayInfo = await _dataContext.VnpayModel.FirstOrDefaultAsync(m => m.PaymentId == orderId);
+
+            if (vnPayInfo == null)
+            {
+                return NotFound();
+            }
+            return View(vnPayInfo);
+        }
     }
 }

@@ -46,5 +46,6 @@ namespace ShoesShop.Areas.Admin.Controllers
                 return BadRequest(errorMessage);
             }
         }
+
     }
 }

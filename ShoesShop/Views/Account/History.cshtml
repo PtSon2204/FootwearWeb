@@ -12,6 +12,7 @@
 			<th>Username</th>
 			<th>Order Date</th>
 			<th>Order Status</th>
+			<th>Payment method</th>
 			<th>Shipping Cost</th>
 			<th>Coupon</th>
 			<th scope="col">Action</th>
@@ -56,12 +57,28 @@
 					}
 					<span class="text @statusClass">@statusText</span>
 				</td>
+				<td>
+					@{
+						string text = item.PaymentMethod;
+						string number_split = text.Split(" ")[1];
+						string text_split = text.Split(" ")[0];
+					}
+					@if (text_split == null)
+					{
+						<span class="text text-primary">COD</span>
+					}
+					else
+					{
+						<span class="text text-danger">@text_split</span>
+					}
+				</td>
 				<td>@item.ShippingCost.ToString("#,##0")VNĐ</td>
 				@if (item.CouponCode == null)
 				{
 					<td>No coupon</td>
 				}
-				else {
+				else 
+				{
 					<td>@item.CouponCode</td>
 				}
 

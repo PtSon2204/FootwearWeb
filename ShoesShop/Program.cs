@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
 using ShoesShop.Areas.Admin.Repository;
+using ShoesShop.Models.Momo;
+using ShoesShop.Services.Momo;
+using ShoesShop.Services.Vnpay;
 
 namespace ShoesShop
 {
@@ -32,6 +35,7 @@ namespace ShoesShop
                 options.Cookie.IsEssential = true;
             });
 
+            //Identity
             builder.Services.AddIdentity<AppUserModel, IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();
 
@@ -68,8 +72,16 @@ namespace ShoesShop
                 options.ClientSecret = builder.Configuration.GetSection("GoogleKeys:ClientSecret").Value;
             });
 
+            //Connect MoMoAPI
+            builder.Services.Configure<MomoOptionModel>(builder.Configuration.GetSection("MomoAPI"));
+            builder.Services.AddScoped<IMomoService, MomoService>();
+
+            //Connect VNPay API
+            builder.Services.AddScoped<IVnPayService, VnPayService>();
+
             var app = builder.Build();
 
+            //page 404 Error
             app.UseStatusCodePagesWithRedirects("/Home/Error?statuscode=[0]");
 
             app.UseSession();
