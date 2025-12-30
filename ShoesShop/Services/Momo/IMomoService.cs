@@ -1,6 +1,6 @@
 ﻿using ShoesShop.Models.Momo;
 
-namespace ShoesShop.Services
+namespace ShoesShop.Services.Momo
 {
     public interface IMomoService
     {

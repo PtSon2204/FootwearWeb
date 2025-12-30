@@ -1,23 +1,25 @@
 ﻿using System.Security.Claims;
 using Newtonsoft.Json;
 using ShoesShop.Migrations;
-using ShoesShop.Services;
+using ShoesShop.Services.Momo;
+using ShoesShop.Services.Vnpay;
 
 namespace ShoesShop.Controllers
 {
     public class CheckoutController : Controller
     {
+        private readonly IVnPayService _vnpayService;
         private readonly DataContext _dataContext;
         private readonly IEmailSender _emailSender;
         private readonly IMomoService _momoService;
-        public CheckoutController(IEmailSender emailSender, DataContext dataContext, IMomoService momoService)
+        public CheckoutController(IEmailSender emailSender, DataContext dataContext, IMomoService momoService, IVnPayService vnPayService)
         {
             _dataContext = dataContext;
             _emailSender = emailSender;
             _momoService = momoService;
+            _vnpayService = vnPayService;
         }
-        [HttpGet]
-        public async Task<IActionResult> Checkout(string OrderId)
+        public async Task<IActionResult> Checkout(string PaymentMethod, string PaymentId)
         {
             var userEmail = User.FindFirstValue(ClaimTypes.Email);
             if (userEmail == null)
@@ -43,15 +45,8 @@ namespace ShoesShop.Controllers
                 orderItem.ShippingCost = shippingPrice;
                 orderItem.CouponCode = coupon_code; 
                 orderItem.UserName = userEmail;
-                if (OrderId != null)
-                {
-                    orderItem.PaymentMethod = OrderId;
-                }
-                else
-                {
-                    orderItem.PaymentMethod = "COD";
-                }
-                    orderItem.Status = 1;
+                orderItem.PaymentMethod = PaymentMethod + " " + PaymentId;
+                orderItem.Status = 1;
                 orderItem.CreateDate = DateTime.Now;
                 _dataContext.Orders.Add(orderItem);
                 _dataContext.SaveChanges();
@@ -96,7 +91,7 @@ namespace ShoesShop.Controllers
 
             if (requestQuery["resultCode"] == 0)
             {
-                var newMomoInsert = new Models.Momo.MomoInfoModel
+                var newMomoInsert = new Models.MomoInfoModel
                 {
                     OrderId = requestQuery["orderId"],
                     FullName = User.FindFirstValue(ClaimTypes.Email),
@@ -107,7 +102,8 @@ namespace ShoesShop.Controllers
                 _dataContext.Add(newMomoInsert);
                 await _dataContext.SaveChangesAsync();
 
-                await Checkout(requestQuery["orderId"]); 
+                string PaymentMethod = "Momo";
+                await Checkout(requestQuery["orderId"], PaymentMethod); 
             }
             else
             {
@@ -116,6 +112,39 @@ namespace ShoesShop.Controllers
             }
 
                 return View(response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> PaymentCallbackVnpay()
+        {
+            var response = _vnpayService.PaymentExecute(Request.Query);
+
+            if (response.VnPayResponseCode == "00")
+            {
+                var newVnpayInsert = new Models.VnpayModel
+                {
+                    OrderId = response.OrderId,
+                    PaymentMethod = response.PaymentMethod,
+                    OrderDescription = response.OrderDescription,
+                    TransactionId = response.TransactionId,
+                    PaymentId = response.PaymentId,
+                    DateCreated = DateTime.Now
+                };
+                _dataContext.Add(newVnpayInsert);
+                await _dataContext.SaveChangesAsync();
+
+                var PaymenMethod = response.PaymentMethod;
+                var PaymentId = response.PaymentId;
+                await Checkout(PaymenMethod, PaymentId);
+            }
+            else
+            {
+                TempData["success"] = "Successfully transaction with VnPay";
+                return RedirectToAction("Index", "Cart");
+            }
+
+            //return Json(response);
+            return View(response);
         }
     }
 }

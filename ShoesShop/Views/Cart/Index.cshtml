@@ -234,11 +234,18 @@
 									<a class="btn btn-primary btn-block" onclick="return confirm('Are you sure checkout?')" style="background:#FE980F; border:none; padding:12px; font-weight:700;" asp-controller="Checkout" asp-action="Checkout">
 										Checkout
 									</a>
-									<form asp-action="CreatePaymentUrl" asp-controller="Payment">
+									<form method="post" asp-action="CreatePaymentUrl" asp-controller="Payment">
+										<input type="hidden" name="FullName" value="@User.Identity.Name" />
 										<input type="hidden" name="Amount" value="@Model.GrandTotal"/>
 										<input type="hidden" name="OrderInfo" value="Payment Momo for order at ShoesShop"/>
-										<input type="hidden" name="FullName" value="@User.Identity.Name" />
 										<button class="btn btn-danger btn-block" name="PayUrl" style="margin-top: 10px; border: 1px solid #ccc;" type="submit">Pay with MoMo</button>
+									</form>
+									<form method="post"asp-action="CreatePaymentUrlVnpay" asp-controller="Payment">
+										<input type="hidden" name="Name" value="@User.Identity.Name" />
+										<input type="hidden" name="Amount" value="@Model.GrandTotal" />
+										<input type="hidden" name="OrderDescription" value="Payment Vnpay for order at ShoesShop" />
+										<input type="hidden" name="OrderType" value="other" />
+										<button class="btn btn-light btn-block" style="margin-top: 10px; border: 1px solid #ccc;" type="submit">Pay with Vnpay</button>
 									</form>
 									<a class="btn btn-default btn-block" style="margin-top: 10px; border: 1px solid #ccc;" asp-action="DeleteShipping" asp-controller="Cart">
 										<i class="fa fa-refresh"></i> Delete shipping

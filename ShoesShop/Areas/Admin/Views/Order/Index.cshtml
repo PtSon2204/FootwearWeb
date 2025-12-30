@@ -59,13 +59,27 @@
 					<span class="text @statusClass">@statusText</span>
 				</td>
 				<td>
-					@if (item.PaymentMethod == "COD" || item.PaymentMethod == null)
+					@{
+						string text = item.PaymentMethod;
+						string number_split = text.Split(" ")[1];
+						string text_split = text.Split(" ")[0];
+					}
+					@if (item.PaymentMethod == null)
 					{
-						<span class="text text-primary">@item.PaymentMethod</span>
+						<span class="text text-primary">COD</span>
 					}
 					else
 					{
-						<span class="text text-danger">By Momo @item.PaymentMethod <a asp-action="PaymentMomoInfo" asp-route-orderId="@item.PaymentMethod" asp-controller="Order"></a></span>
+						@if (text_split == "Momo")
+						{
+							@text_split
+							<a asp-action="PaymentMomoInfo" asp-route-orderId="@number_split" asp-controller="Order"><span class="text text-danger">@number_split</span></a>
+						}
+						else
+						{
+							@text_split
+							<a asp-action="PaymentVnpayInfo" asp-route-orderId="@number_split" asp-controller="Order"><span class="text text-danger">@number_split</span></a>
+						}
 					}
 				</td>
 				<td>@item.ShippingCost.ToString("#,##0")VNĐ</td>

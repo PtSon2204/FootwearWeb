@@ -120,5 +120,17 @@ namespace ShoesShop.Areas.Admin.Controllers
             }
             return View(momoInfo);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> PaymentVnpayInfo(string orderId)
+        {
+            var vnPayInfo = await _dataContext.VnpayModel.FirstOrDefaultAsync(m => m.PaymentId == orderId);
+
+            if (vnPayInfo == null)
+            {
+                return NotFound();
+            }
+            return View(vnPayInfo);
+        }
     }
 }

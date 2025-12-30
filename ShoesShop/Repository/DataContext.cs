@@ -25,5 +25,6 @@ namespace ShoesShop.Repository
         public DbSet<CouponModel> Coupons { get; set; }
         public DbSet<StatisticalModel> Statistical { get; set; }
         public DbSet<MomoInfoModel> MomoInfoModel { get; set; }
+        public DbSet<VnpayModel> VnpayModel { get; set; }
     }
 }

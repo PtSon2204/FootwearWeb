@@ -5,7 +5,7 @@ using ShoesShop.Models.Momo;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ShoesShop.Services
+namespace ShoesShop.Services.Momo
 {
     public class MomoService : IMomoService
     {
@@ -48,7 +48,7 @@ namespace ShoesShop.Services
                 orderInfo = model.OrderInfo,
                 requestId = model.OrderId,
                 extraData = "",
-                signature = signature
+                signature
             };
 
             request.AddParameter("application/json", JsonConvert.SerializeObject(requestData), ParameterType.RequestBody);

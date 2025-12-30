@@ -1,0 +1,30 @@
+﻿@model VnpayModel
+
+@{
+	ViewData["title"] = "VnPay Information";
+}
+<body>
+	<h3>List Info</h3>
+
+	<a class="btn btn-primary" asp-action="Index" asp-controller="Order">Back to Orders</a>
+	<table class="table" id="myTable">
+		<thead>
+			<tr>
+				<th>OrderDescription</th>
+				<th>TransactionId</th>
+				<th>PaymentMethod</th>
+				<th>PaymentId</th>
+				<th>DateCreated</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>@Model.OrderDescription</td>
+				<td>@Model.TransactionId</td>
+				<td>@Model.PaymentMethod</td>
+				<td>@Model.PaymentId</td>
+				<td>@Model.DateCreated</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
