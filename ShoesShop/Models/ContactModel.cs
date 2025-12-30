@@ -4,6 +4,7 @@ namespace ShoesShop.Models
 {
     public class ContactModel
     {
+        public int Id { get; set; }
         [Key]
         [Required(ErrorMessage = "Please enter name website")]
         public string Name { get; set; }

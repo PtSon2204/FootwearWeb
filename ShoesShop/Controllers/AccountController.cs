@@ -284,7 +284,7 @@ namespace ShoesShop.Controllers
 
                 if (result.Succeeded)
                 {
-                    await _userManage.AddToRoleAsync(newUser, "user");
+                    await _userManage.AddToRoleAsync(newUser, "User");
                     TempData["success"] = "Create user successfully!";
                     return Redirect("/account/login");
                 }
